@@ -15,9 +15,13 @@ public class Field {
 	 */
 	public String getFieldName(){
 		return name;
-		
-		public void passed (Player)
-		
-		
 	}
+		
+//	Kaldes når en spiller lander et felt
+	public void LandOn (Player player){
+		}
+		
+		
+		
+	
 }
