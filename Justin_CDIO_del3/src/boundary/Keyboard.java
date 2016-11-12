@@ -6,7 +6,7 @@ import java.util.Scanner;
  *
  */
 public class Keyboard {
-	private Scanner in;
+	private static Scanner in;
 	public Keyboard() {
 		in = new Scanner(System.in);
 	}
@@ -16,7 +16,16 @@ public class Keyboard {
 		return in.nextLine();
 	}
 
+	public static boolean waitForYesNo(){
+		String s;
+		boolean yes = false; 
 
+		s = in.nextLine();
+		if (s.equalsIgnoreCase(ULang.YesChar())) {
+			yes = true;
+		}
+		return yes;
+	}
 	/** Venter p� en int. Returnerer f�rst n�r brugeren indtaster den int der ventes p�
 	 * @param ind int der ventes p�
 	 */

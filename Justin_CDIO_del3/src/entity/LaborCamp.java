@@ -13,4 +13,22 @@ public class LaborCamp extends Ownable {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	void landOnField(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getRent() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

@@ -1,5 +1,8 @@
 package entity;
 
+import boundary.Screen;
+import boundary.ULang;
+
 public abstract class Field {
 	private String name;
 	private int number;
@@ -24,15 +27,12 @@ public abstract class Field {
 		return name;
 	}
 
-	//	Kaldes n�r en spiller lander et felt
-	public void LandOn (Player player){
+	void landOnField(Player player){
+		Screen.println(ULang.LandOnText(name));
+
 	}
-
-	abstract int getRent();
-	abstract int getPrice();
-	abstract void landOnField(Player player);
-
 }
+
 
 
 

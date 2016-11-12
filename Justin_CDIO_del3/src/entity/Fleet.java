@@ -14,4 +14,25 @@ int RENT_1,RENT_2,RENT_3,RENT_4;
 		// TODO Auto-generated constructor stub
 	}
 
+
+	@Override
+	void landOnField(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public int getRent() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

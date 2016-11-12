@@ -1,5 +1,6 @@
 package boundary;
 
+
 public class ULang {
 
 	/**
@@ -8,15 +9,24 @@ public class ULang {
 	 */
 
 	
-	public static String PassedText(){
-	String confirm = "Du passerer ";
-	return confirm;
+	
+	public static String LandOnText(String fieldName){
+	String s = "Du er landet på " + fieldName;
+	return s;
 	}
 	
-	public static String LandOnText(){
-	String confirm = "Du er landet på ";
-	return confirm;
+	public static String askBuyField(int balance, int price){
+	String s = "Din balance er: "+ balance + ", prisen er: " +price + ". Vil du købe denne ejendom? (J/N)" ;
+	return s;
 	}
+	
+	public static String YesChar(){
+		return "Jj";
+		}
+	
+
+	
+	
 	
 	
 	

@@ -1,6 +1,6 @@
 package boundary;
 /**
- * Implementerer en tekstskærm
+ * Implementerer en tekstskï¿½rm
  *
  */
 public class Screen {
@@ -16,7 +16,7 @@ public class Screen {
 	 * Udskriver tekst med linieskift
 	 * @param p tekst der skal udskrives
 	 */
-	void println(String p){
+	public static void println(final String p){
 		System.out.println(p);
 	}
 }
