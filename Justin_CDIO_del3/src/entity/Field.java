@@ -1,27 +1,39 @@
 package entity;
 
-public class Field {
+public abstract class Field {
 	private String name;
-	
-	// Constructor used to create fields: 
-	public Field(String FieldName){
-		this.name = FieldName; 
+	private int number;
 
+	// Constructor used to create fields: 
+	public Field(int fieldNumber, String fieldName){
+		super();
+		this.name = fieldName; 
+		this.number = fieldNumber;
 	}
+
+	public int getNumber() {
+		return number;
+	}
+
 
 	/**
 	 * The getFName method returns the String name of the field. 
 	 * @return
 	 */
-	public String getFieldName(){
+	public String getfieldName(){
 		return name;
 	}
-		
-//	Kaldes når en spiller lander et felt
+
+	//	Kaldes nï¿½r en spiller lander et felt
 	public void LandOn (Player player){
-		}
-		
-		
-		
-	
+	}
+
+	abstract int getRent();
+	abstract int getPrice();
+	abstract void landOnField(Player player);
+
 }
+
+
+
+

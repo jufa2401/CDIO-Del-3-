@@ -3,19 +3,15 @@ package entity;
 public class Player {
 
 	private String name;
-	private boolean hasLost;
-	private int fleetsOwned, laborcampsOwned;
+	private int balance, fieldnumber ;
 	
 	//Constructor:
-	public Player(String name){
+	public Player(String name, int balance){
 		this.name = name;
-		hasLost = false;
-		fleetsOwned = 0;
-		setLaborcampsOwned(0);
-		
-		
-		}
-
+		this.balance = balance;
+		//		hasLost = false;
+		//		fleetsOwned = 0;
+	}
 	//getters and setters. 
 	public String getName() {
 		return name;
@@ -25,32 +21,47 @@ public class Player {
 		this.name = name;
 	}
 
-	/**
-	 * @return the laborcampsOwned
-	 */
-	public int getLaborcampsOwned() {
-		return laborcampsOwned;
+
+	public int getBalance() {
+		return balance;
 	}
 
 	/**
-	 * @param laborcampsOwned the laborcampsOwned to set
+	 * addToCurrentBalance adds amount to the total balance and returns the new balance, note that the balance cannot be negative. 
+	 * @param amount
+	 * @return
 	 */
-	public void setLaborcampsOwned(int laborcampsOwned) {
-		this.laborcampsOwned = laborcampsOwned;
+//	Metode til overførsel af penge
+	public int Transaction(int amount){
+		balance = balance + amount;
+		if(balance < 0){
+			balance = 0;
+		}return balance;
+	}	
+//	Metode til skattebetaling, returnerer ændret balance
+	public int taxDeduction(int rate){
+		balance = (balance * (100-rate))/100;
+		return balance;
 	}
-	
-	public void lossStatus(boolean condition) {
-		hasLost = condition;
+//	Giver muligheden for at betale til andre spillere, afslutter med at returnere den ændrede balance
+	public int payTo (Player recipient, int amount) {
+		recipient.Transaction(amount);
+		Transaction(-amount);
+		return balance;
 	}
-	
-	public
-	
-// Nedenstående kode refererer til "name" og "balance" fra UserLanguage klassen. 
-//	
-//public String toString (){
-//	return (" pengebalance: " + balance);
-//}
+//	Getters and setters for fieldnumber
+	public int getFieldnumber() {
+		return fieldnumber;
+	}
+	public void setFieldnumber(int fieldnumber) {
+		this.fieldnumber = fieldnumber;
+	}
 	
 	
 }
+
+
+
+
+
 
