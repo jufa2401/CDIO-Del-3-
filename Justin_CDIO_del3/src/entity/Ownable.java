@@ -1,5 +1,11 @@
 package entity;
-
+/*
+ * Ownable er en underklasse til Fieldklassen,
+ * som er superklasse til alle felter der kan ejes
+ * Ownable indeholder således alle de metoder, den arver fra Field
+ * og de metoder som kun er generelle,
+ * for de felter der kan ejes.
+ */
 public abstract class Ownable extends Field {
 	int price;
 	Player owner;

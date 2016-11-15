@@ -1,5 +1,12 @@
 package entity;
 
+/*
+ * Man kan ikke eje tax og dens superklasse er derfor Field.
+ * Når man lander på dette felt,
+ * skal man betale en pris.
+ * Prisen er den mindste af enten
+ * den faste betalingssum, eller skatteprocenten.
+ */
 public class Tax extends Field{
 	private int taxAmount, taxRate;	
 	public Tax(int fieldNumber, String fieldName, int taxAmount, int taxRate) {

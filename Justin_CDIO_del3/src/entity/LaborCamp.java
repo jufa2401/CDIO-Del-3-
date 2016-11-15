@@ -1,4 +1,10 @@
 package entity;
+/* Denne type felt har en pris,
+ * som kan betales for ejerskab.
+ * Hvis man lander på en LaborCamp som er ejet,
+ * skal man betale en variabel leje til ejeren.
+ * Lejen er bestemt efter terningøjesummen.
+ */
 
 public class LaborCamp extends Ownable {
 	int baseRent;

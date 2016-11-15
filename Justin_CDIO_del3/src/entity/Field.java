@@ -1,5 +1,8 @@
 package entity;
-
+/*
+ * Field klassen er vores øverste 'feltklasse'
+ * Den beskriver metoder som er generelle for ALLE felttyper.
+ */
 import boundary.Screen;
 import boundary.ULang;
 

@@ -1,14 +1,17 @@
 package entity;
 import boundary.*;
-
+/*
+ * Denne type felt har en pris,
+ * som kan betales for ejerskab.
+ * Hvis man lander på en LaborCamp som er ejet,
+ * skal man betale en fast leje til ejeren.
+ * 
+ */
 public class Territory extends Ownable{
 	int rent;
 	public Territory(int fieldNumber,String fieldName, int price, int rent) {
 		super(fieldNumber, fieldName, price);
-		this.rent = rent;
-
-
-		
+		this.rent = rent;	
 	}
 	
 	public int getPrice() {
