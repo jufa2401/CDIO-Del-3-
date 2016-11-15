@@ -1,4 +1,7 @@
-package entity;
+package entity.fieldclasses;
+
+import entity.Player;
+
 /*
  * Ownable er en underklasse til Fieldklassen,
  * som er superklasse til alle felter der kan ejes

@@ -1,4 +1,6 @@
-package entity;
+package entity.fieldclasses;
+
+import entity.Player;
 
 public class Refuge extends Field {
 private int bonus;

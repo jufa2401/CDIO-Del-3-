@@ -1,4 +1,7 @@
-package entity;
+package entity.fieldclasses;
+
+import entity.Player;
+
 /* Denne type felt har en pris,
  * som kan betales for ejerskab.
  * Hvis man lander på en LaborCamp som er ejet,

@@ -1,5 +1,6 @@
-package entity;
+package entity.fieldclasses;
 import boundary.*;
+import entity.Player;
 /*
  * Denne type felt har en pris,
  * som kan betales for ejerskab.

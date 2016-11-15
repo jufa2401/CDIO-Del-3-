@@ -1,7 +1,9 @@
-package entity;
+package entity.fieldclasses;
+
+import entity.Player;
 
 /*
- * Man kan ikke eje tax og dens superklasse er derfor Field.
+ * Man kan ikke eje tax og dens superklasse er derfor Field.	
  * Når man lander på dette felt,
  * skal man betale en pris.
  * Prisen er den mindste af enten

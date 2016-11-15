@@ -1,7 +1,7 @@
 package rungame;
 
-import entity.Field;
-import entity.Territory;
+import entity.fieldclasses.Field;
+import entity.fieldclasses.Territory;
 
 public class Main {
 

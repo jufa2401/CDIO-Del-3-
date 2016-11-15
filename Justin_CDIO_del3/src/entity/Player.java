@@ -34,6 +34,7 @@ public class Player {
 //	Metode til overførsel af penge
 	public int Transaction(int amount){
 		balance = balance + amount;
+//	Hvis balancen ryger under nul bliver balancen sat til 0
 		if(balance < 0){
 			balance = 0;
 		}return balance;
