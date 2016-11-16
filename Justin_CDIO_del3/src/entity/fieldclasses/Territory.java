@@ -34,6 +34,7 @@ public class Territory extends Ownable{
 			player.payTo(owner, rent);
 		} else if (player.getBalance()>price) {
 			super.landOnField(player);
+	//
 			Screen.println(ULang.askBuyField(player.getBalance(), price));
 			if (Keyboard.waitForYesNo()) {
 				player.Transaction(-price);

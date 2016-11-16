@@ -24,6 +24,9 @@ public class Tax extends Field{
 			payment = taxAmount;
 		} else { 
 			int balance = player.getBalance();
+//			Er i tvivl om jeg kan bruge den metode jeg har skrevet i player i stedet:
+//			payment = player.taxDeduction(taxRate);
+			
 //			Vi beregner assets som resterende penge på kontoen, det kunne have inkluderet værdien af ejendomme
 //			Dette kan evt. implementeres senere
 			payment = taxRate* balance/100;
