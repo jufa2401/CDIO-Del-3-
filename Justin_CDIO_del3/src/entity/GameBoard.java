@@ -1,34 +1,14 @@
 package entity;
 
 import entity.fieldclasses.Field;
+import entity.fieldclasses.Fleet;
 import entity.fieldclasses.LaborCamp;
 import entity.fieldclasses.Refuge;
+import entity.fieldclasses.Tax;
 import entity.fieldclasses.Territory;
-
+// Hvad er rækkefølgen af felterne?
 public class GameBoard {
-/*	
- 	Tribe Encampment	Territory	Rent 100	Price 1000
-	Crater	Territory	Rent 300	Price 1500
-	Mountain	Territory	Rent 500	Price 2000
-	Cold Desert	Territory	Rent 700	Price 3000
-	Black cave	Territory	Rent 1000	Price 4000
-	The Werewall	Territory	Rent 1300	Price 4300
-	Mountain village	Territory	Rent 1600	Price 4750
-	South Citadel	Territory	Rent 2000	Price 5000
-	Palace gates	Territory	Rent 2600	Price 5500
-	Tower	Territory	Rent 3200	Price 6000
-	Castle	Territory	Rent 4000	Price 8000
-	Walled city	Refuge	Receive 5000
-	Monastery	Refuge	Receive 500
-	Huts in the mountain	Labor camp	Pay 100 x dice	Price 2500
-	The pit	Labor camp	Pay 100 x dice	Price 2500
-	Goldmine	Tax	Pay 2000
-	Caravan	Tax	Pay 4000 or 10% of total assets
-	Second Sail	Fleet	Pay 500-4000	Price 4000
-	Sea Grover	Fleet	Pay 500-4000	Price 4000
-	The Buccaneers	Fleet	Pay 500-4000	Price 4000
-	Privateer armade
-	*/
+
 //	Der erklæres et array med 22 elementer, selvom vi kun skal bruge 21. Vi vælger at springe 0 over
 	Field[] field = new Field[22];{
 		field[1] = new Territory(1, "Tribe Encampment", 1000, 100);
@@ -45,7 +25,15 @@ public class GameBoard {
 		field[12] = new Refuge(12, "Walled City", 5000);
 		field[13] = new Refuge(13, "Monastery", 500);
 		field[14] = new LaborCamp(14, "Huts in the mountain", 2500);
-		field[14] = new LaborCamp(15, "Huts in the mountain", 2500);
+		field[15] = new LaborCamp(15, "The pit", 2500);
+		field[16] = new Tax(16, "Goldmine", 2000, 0);
+		field[17] = new Tax(17, "Caravan", 4000, 10);
+		field[18] = new Fleet(18, "Second Sail", 4000);
+		field[19] = new Fleet(19, "Sea Grove", 4000);
+		field[20] = new Fleet(20, "The Buccaneers", 4000);
+		field[21] = new Fleet(21, "Privateer armade", 4000);
+				
+	}	
 		
 
  
