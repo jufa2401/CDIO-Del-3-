@@ -10,7 +10,7 @@ import entity.Player;
  * dvs. at du kan opkræve højere leje, jo flere 'fleets' du ejer
  */
 public class Fleet extends Ownable {
-int rent, fleetsOwned;
+	int rent, fleetsOwned;
 
 
 	/**
@@ -38,13 +38,13 @@ int rent, fleetsOwned;
 			player.payTo(owner, rent);
 		} else if (player.getBalance()>price) {
 			super.landOnField(player);
-//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
-			
+			//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
+
 			//	!!!		Vi må ikke hente fra boundary klasserne ind i entitetsklasserne
 			//			Screen.println(ULang.askBuyField(player.getBalance(), price));
 			//			if (Keyboard.waitForYesNo()) {
 			player.Transaction(-price);
-//			Når man køber en fleet, tæller vi 1 op i vores FleetsOwned metode i player
+			//			Når man køber en fleet, tæller vi 1 op i vores FleetsOwned metode i player
 			setOwner(player);
 			player.setFleetsOwned(1+player.getFleetsOwned());
 

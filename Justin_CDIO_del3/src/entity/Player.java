@@ -26,7 +26,7 @@ public class Player {
 	public int getBalance() {
 		return balance;
 	}
-//	Getters og setters til fleets
+	//	Getters og setters til fleets
 	public int getFleetsOwned() {
 		return fleetsOwned;
 	}

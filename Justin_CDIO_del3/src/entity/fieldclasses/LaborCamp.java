@@ -5,7 +5,6 @@ package entity.fieldclasses;
  * skal man betale en variabel leje til ejeren.
  * Lejen er bestemt efter terningøjesummen.
  */
-
 import entity.Player;
 public class LaborCamp extends Ownable {
 	/**
@@ -21,7 +20,7 @@ public class LaborCamp extends Ownable {
 		 */
 
 
-		
+
 		// TODO Auto-generated constructor stub
 	}
 
@@ -32,8 +31,8 @@ public class LaborCamp extends Ownable {
 			player.payTo(owner, rent);
 		} else if (player.getBalance()>price) {
 			super.landOnField(player);
-//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
-			
+			//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
+
 			//	!!!		Vi må ikke hente fra boundary klasserne ind i entitetsklasserne
 			//			Screen.println(ULang.askBuyField(player.getBalance(), price));
 			//			if (Keyboard.waitForYesNo()) {

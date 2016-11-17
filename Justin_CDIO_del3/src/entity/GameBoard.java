@@ -6,10 +6,10 @@ import entity.fieldclasses.LaborCamp;
 import entity.fieldclasses.Refuge;
 import entity.fieldclasses.Tax;
 import entity.fieldclasses.Territory;
-// Hvad er rækkefølgen af felterne?
+// Hvad er rækkefølgen af felterne?a
 public class GameBoard {
 
-//	Der erklæres et array med 22 elementer, selvom vi kun skal bruge 21. Vi vælger at springe 0 over
+	//	Der erklæres et array med 22 elementer, selvom vi kun skal bruge 21. Vi vælger at springe 0 over
 	Field[] field = new Field[22];{
 		field[1] = new Territory(1, "Tribe Encampment", 1000, 100);
 		field[2] = new Territory(2, "Crater", 1500, 300);
@@ -32,12 +32,12 @@ public class GameBoard {
 		field[19] = new Fleet(19, "Sea Grove", 4000);
 		field[20] = new Fleet(20, "The Buccaneers", 4000);
 		field[21] = new Fleet(21, "Privateer armade", 4000);
-				
-	}	
-		
 
- 
-	
+	}	
+
+
+
+
 
 
 }
