@@ -7,53 +7,53 @@ package entity.fieldclasses;
  */
 
 import entity.Player;
-import entity.DiceCup;
 public class LaborCamp extends Ownable {
-	int baseRent;
-
 	/**
 	 * @param FieldName
 	 * @param price
 	 * @param owner
 	 */
-	public LaborCamp(int fieldNumber,String fieldName, int price, int baseRent) {
+	public LaborCamp(int fieldNumber,String fieldName, int price) {
 		super(fieldNumber,fieldName, price);
-/*
- * Vi vil gerne hente terningsummen
- * fra vores dicecup klasse
- */
+		/*
+		 * Vi vil gerne hente terningsummen
+		 * fra vores dicecup klasse
+		 */
+
+
 		
-//		baseRent = 100*(d2.getvalue + d2.getvalue);
-		this.baseRent = baseRent;
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	void landOnField(Player player) {
 		if (owner != null){
-			player.payTo(owner, baseRent);
+			int rent = 100*player.getDiceSum();
+			player.payTo(owner, rent);
 		} else if (player.getBalance()>price) {
 			super.landOnField(player);
-//	!!!		Vi må ikke hente fra boundary klasserne ind i entitetsklasserne
-//			Screen.println(ULang.askBuyField(player.getBalance(), price));
-//			if (Keyboard.waitForYesNo()) {
-				player.Transaction(-price);
-				setOwner(player);
-				
-			}		
-		
-	}
+//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
+			
+			//	!!!		Vi må ikke hente fra boundary klasserne ind i entitetsklasserne
+			//			Screen.println(ULang.askBuyField(player.getBalance(), price));
+			//			if (Keyboard.waitForYesNo()) {
+			player.Transaction(-price);
+			setOwner(player);
 
-	@Override
-	public int getRent() {
-		// TODO Auto-generated method stub
-		return baseRent;
-	}
+		}		
 
+	}
 	@Override
 	public int getPrice() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	int getRent() {
+		// Kan evt. udvides til at returnere 100 gange terningkast
+		return 0;
+	}
+
 
 }
