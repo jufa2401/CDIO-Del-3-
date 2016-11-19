@@ -14,7 +14,7 @@ import entity.DiceCup;
 import entity.GameBoard;
 import entity.Player;
 
-//omg
+//omgcr
 
 public class GUIHandler {
 	public void createGameBoard(GameBoard gameBoard) {
