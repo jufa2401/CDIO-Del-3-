@@ -22,8 +22,6 @@ public abstract class Ownable extends Field {
 
 		// TODO Auto-generated constructor stub
 	}
-	abstract int getRent();
-	abstract int getPrice();
 
 	public Player getOwner() {
 		return owner;

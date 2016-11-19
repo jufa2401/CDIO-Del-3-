@@ -49,7 +49,7 @@ public class LaborCamp extends Ownable {
 	}
 
 	@Override
-	int getRent() {
+	public int getRent() {
 		// Kan evt. udvides til at returnere 100 gange terningkast
 		return 0;
 	}

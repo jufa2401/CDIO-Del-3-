@@ -3,17 +3,17 @@ import entity.Player;
 
 public abstract class Field {
 	private String name;
-	private int number;
+	private int ID;
 
-	// Constructor used to create fields: 
-	public Field(int fieldNumber, String fieldName){
+	// Constructor der skaber felter 
+	public Field(int fieldIdentifier, String fieldName){
 		super();
 		this.name = fieldName; 
-		this.number = fieldNumber;
+		this.ID = fieldIdentifier;
 	}
 
-	public int getNumber() {
-		return number;
+	public int getID() {
+		return ID;
 	}
 
 
@@ -24,6 +24,10 @@ public abstract class Field {
 	public String getfieldName(){
 		return name;
 	}
+	
+//	Defineres til at hente rent og price fra Fieldklassen. Det bliver smart når vi skal lave referencer i vores GUI-array
+	public abstract int getRent();
+	public abstract int getPrice();
 
 	void landOnField(Player player){
 //		Screen.println(ULang.LandOnText(name));
