@@ -3,26 +3,35 @@ package entity;
 public class Player {
 
 	private String name;
-	private int balance, fieldnumber, d1, d2, fleetsOwned;
+	private int balance, currentField, d1, d2, fleetsOwned;
 	private boolean hasLost;
-
 	//Constructor:
-	public Player(String name, int balance){
+	public Player (String name, int balance){
 		this.name = name;
 		this.balance = balance;
-		hasLost = false;
 		fleetsOwned = 0;
+		hasLost = false;
+	}
+	public Player() {
+		// TODO Auto-generated constructor stub
 	}
 	//getters and setters for navn og balance 
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
+//	 metode der tjekker om en spiller har tabt
+	public boolean isHasLost() {
+		if (balance <= 0) {
+			hasLost = true;
+		}
+		return hasLost;
+	}
+	public void setHasLost(boolean hasLost) {
+		this.hasLost = hasLost;
+	}
 	public int getBalance() {
 		return balance;
 	}
@@ -34,12 +43,7 @@ public class Player {
 		this.fleetsOwned = fleetsOwned;
 	}
 
-	public boolean isHasLost() {
-		return hasLost;
-	}
-	public void setHasLost(boolean hasLost) {
-		this.hasLost = hasLost;
-	}
+
 	/*
 	 *  Vi laver metode til at gemme terningsummen, denne metode er lavet specifikt 
 	 *  med hensyn til felter hvor aktionen er bestemt af terningsummen.
@@ -81,12 +85,15 @@ public class Player {
 		return balance;
 	}
 	//	Getters and setters for fieldnumber
-	public int getFieldnumber() {
-		return fieldnumber;
+	public int getCurrentField() {
+		return currentField;
 	}
-	public void setFieldnumber(int fieldnumber) {
-		this.fieldnumber = fieldnumber;
+	public void moveToField(int roll) {
+		this.currentField += roll;
+		while(this.currentField > 21)
+			this.currentField -= 22;
 	}
+
 
 
 }

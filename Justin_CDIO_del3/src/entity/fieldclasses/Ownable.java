@@ -31,6 +31,7 @@ public abstract class Ownable extends Field {
 	public void setOwner(Player owner) {
 		this.owner = owner;
 	}
+// if (player.hasLost =true 
 
 
 

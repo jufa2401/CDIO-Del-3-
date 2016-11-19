@@ -1,5 +1,5 @@
 package entity;
-
+// Bør rettes med encapsulation ?
 public class Die {
 	private int FaceValue, sides; 
 
