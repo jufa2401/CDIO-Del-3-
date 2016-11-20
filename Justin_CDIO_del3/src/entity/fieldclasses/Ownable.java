@@ -1,4 +1,5 @@
 package entity.fieldclasses;
+import java.awt.Color;
 
 import entity.Player;
 
@@ -13,8 +14,8 @@ public abstract class Ownable extends Field {
 	int price;
 	Player owner;
 
-	public Ownable(int fieldNumber, int price) {
-		super(fieldNumber);
+	public Ownable(int fieldNumber, Color color, int price) {
+		super(fieldNumber, color);
 
 		this.price = price;
 		this.owner = null;

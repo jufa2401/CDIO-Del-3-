@@ -1,4 +1,6 @@
 package entity.fieldclasses;
+import java.awt.Color;
+
 /* Denne type felt har en pris,
  * som kan betales for ejerskab.
  * Hvis man lander på en LaborCamp som er ejet,
@@ -12,8 +14,8 @@ public class LaborCamp extends Ownable {
 	 * @param price
 	 * @param owner
 	 */
-	public LaborCamp(int fieldNumber, int price) {
-		super(fieldNumber,price);
+	public LaborCamp(int fieldNumber, Color color, int price) {
+		super(fieldNumber, color, price);
 		/*
 		 * Vi vil gerne hente terningsummen
 		 * fra vores dicecup klasse
@@ -45,7 +47,7 @@ public class LaborCamp extends Ownable {
 	@Override
 	public int getPrice() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.price;
 	}
 
 	@Override

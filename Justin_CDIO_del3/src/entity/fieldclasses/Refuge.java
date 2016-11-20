@@ -1,12 +1,12 @@
 package entity.fieldclasses;
+import java.awt.Color;
 
 import entity.Player;
 
 public class Refuge extends Field {
 private int bonus;
-	public Refuge(int fieldNumber, int bonus) {
-		super(fieldNumber);
-		
+	public Refuge(int fieldNumber, Color color, int bonus) {
+		super(fieldNumber, color);
 		this.bonus = bonus;
 	}
 

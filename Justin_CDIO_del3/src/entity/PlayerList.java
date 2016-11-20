@@ -15,7 +15,7 @@ public class PlayerList {
 	}
 
 
-	public void addplayer(String name) {
+	public void addPlayer(String name) {
 		players[playerCount] = new Player(name, 30000);
 		playerCount++;
 

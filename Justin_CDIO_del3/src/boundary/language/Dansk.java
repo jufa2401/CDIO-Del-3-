@@ -31,8 +31,7 @@ public class Dansk implements LanguageDefinitions {
 				"Castle",
 				"Privateer armade"			
 		};
-		// ID starter ved 1, arrayet starter ved 0
-		return names[id-1];
+		return names[id];
 	}
 	@Override
 

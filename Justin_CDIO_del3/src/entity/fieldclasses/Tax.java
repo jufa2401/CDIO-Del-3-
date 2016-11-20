@@ -1,4 +1,5 @@
 package entity.fieldclasses;
+import java.awt.Color;
 import entity.Player;
 
 /*
@@ -10,8 +11,8 @@ import entity.Player;
  */
 public class Tax extends Field{
 	private int taxAmount, taxRate;	
-	public Tax(int fieldNumber, int taxAmount, int taxRate) {
-		super(fieldNumber);
+	public Tax(int fieldNumber, Color color, int taxAmount, int taxRate) {
+		super(fieldNumber, color);
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
 	}

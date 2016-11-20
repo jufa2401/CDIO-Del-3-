@@ -1,4 +1,5 @@
 package entity.fieldclasses;
+import java.awt.Color;
 import entity.Player;
 /*
  * Denne type felt har en pris,
@@ -9,14 +10,13 @@ import entity.Player;
  */
 public class Territory extends Ownable{
 	int rent;
-	public Territory(int fieldNumber, int price, int rent) {
-		super(fieldNumber, price);
+	public Territory(int fieldNumber, Color color, int price, int rent) {
+		super(fieldNumber, color, price);
 		this.rent = rent;	
 	}
 
 	public int getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.price;
 	}
 	public int getRent() {
 		return rent;

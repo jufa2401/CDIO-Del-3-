@@ -1,4 +1,5 @@
 package entity.fieldclasses;
+import java.awt.Color;
 
 import entity.Player;
 
@@ -18,8 +19,8 @@ public class Fleet extends Ownable {
 	 * @param price
 	 * @param owner
 	 */
-	public Fleet(int fieldNumber, int price) {
-		super(fieldNumber,price);
+	public Fleet(int fieldNumber, Color color, int price) {
+		super(fieldNumber, color, price);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -64,7 +65,7 @@ public class Fleet extends Ownable {
 	@Override
 	public int getPrice() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.price;
 	}
 
 }

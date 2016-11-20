@@ -18,31 +18,30 @@ import entity.Player;
 //omgcr
 
 public class GUIHandler {
-	public void createGameBoard(GameBoard gb) {
-
+	
+	public void createGameBoard(GameBoard gb, LanguageHandler language) {
+		int id;
 		int length = gb.getNumberOfFields();
 		Field[] fields = new Field[length];
-		for (int i = 0; i < length; i++) {
-			int price = gb.getFieldPrice(i);
+		for (id = 0; id < length; id++) {
+			int price = gb.getFieldPrice(id);
 			//hvis feltet er ownable erklærer vi en 'street'
 			if (price > 0) {
-				fields[i] = new Street.Builder()
-						.setTitle(LanguageHandler.getFieldName(i, gb))
-						.setSubText(LanguageHandler.getFieldPrice(i, gb))
-						.setBgColor(Color.RED)
+				fields[id] = new Street.Builder()
+						.setTitle(language.getFieldName(id, gb))
+						.setSubText(language.getFieldPrice(id, gb))
+						.setBgColor(gb.getFieldColor(id))
 						.build();
 			} else {
-				fields[i] = new Refuge.Builder()
-						.setTitle(LanguageHandler.getFieldName(i, gb))
-						.setSubText(LanguageHandler.getFieldPrice(i, gb))
-						.setBgColor(Color.YELLOW)
+				fields[id] = new Refuge.Builder()
+						.setTitle(language.getFieldName(id, gb))
+						.setSubText(language.getFieldPrice(id, gb))
+						.setBgColor(gb.getFieldColor(id))
 						.build();
 
 			}
-
-			GUI.create(fields);
-			GUI.setDice(1, 1);
 		}
-
+		GUI.create(fields);
+		GUI.setDice(1, 1);
 	}
 }

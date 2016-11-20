@@ -27,11 +27,11 @@ public class LanguageHandler {
 		return selectedLanguage.notifyLangChange();
 	}
 
-	public static String getFieldName(int id, GameBoard gb) {
+	public String getFieldName(int id, GameBoard gb) {
 		return selectedLanguage.getFieldName(id, gb);
 	}
 
-	public static String getFieldPrice(int id, GameBoard gb) {
+	public String getFieldPrice(int id, GameBoard gb) {
 		return selectedLanguage.getFieldPrice(id, gb);
 	}
 }

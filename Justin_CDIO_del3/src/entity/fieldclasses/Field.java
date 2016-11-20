@@ -1,17 +1,24 @@
 package entity.fieldclasses;
 import entity.Player;
+import java.awt.Color;
 
 public abstract class Field {
 	private int ID;
+	private Color color;
 
 	// Constructor der skaber felter 
-	public Field(int fieldIdentifier){
+	public Field(int fieldIdentifier, Color color) {
 		super(); 
 		this.ID = fieldIdentifier;
+		this.color = color;
 	}
 
 	public int getID() {
 		return ID;
+	}
+	
+	public Color getColor() {
+		return color;
 	}
 	
 /*
