@@ -9,8 +9,8 @@ import entity.Player;
  */
 public class Territory extends Ownable{
 	int rent;
-	public Territory(int fieldNumber,String fieldName, int price, int rent) {
-		super(fieldNumber, fieldName, price);
+	public Territory(int fieldNumber, int price, int rent) {
+		super(fieldNumber, price);
 		this.rent = rent;	
 	}
 

@@ -13,8 +13,8 @@ public abstract class Ownable extends Field {
 	int price;
 	Player owner;
 
-	public Ownable(int fieldNumber, String fieldName, int price) {
-		super(fieldNumber,fieldName);
+	public Ownable(int fieldNumber, int price) {
+		super(fieldNumber);
 
 		this.price = price;
 		this.owner = null;

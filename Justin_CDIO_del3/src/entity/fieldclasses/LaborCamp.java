@@ -12,8 +12,8 @@ public class LaborCamp extends Ownable {
 	 * @param price
 	 * @param owner
 	 */
-	public LaborCamp(int fieldNumber,String fieldName, int price) {
-		super(fieldNumber,fieldName, price);
+	public LaborCamp(int fieldNumber, int price) {
+		super(fieldNumber,price);
 		/*
 		 * Vi vil gerne hente terningsummen
 		 * fra vores dicecup klasse

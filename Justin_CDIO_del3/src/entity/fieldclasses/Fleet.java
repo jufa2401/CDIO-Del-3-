@@ -18,8 +18,8 @@ public class Fleet extends Ownable {
 	 * @param price
 	 * @param owner
 	 */
-	public Fleet(int fieldNumber,String fieldName, int price) {
-		super(fieldNumber,fieldName, price);
+	public Fleet(int fieldNumber, int price) {
+		super(fieldNumber,price);
 		// TODO Auto-generated constructor stub
 	}
 

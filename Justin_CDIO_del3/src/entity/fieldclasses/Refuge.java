@@ -4,8 +4,8 @@ import entity.Player;
 
 public class Refuge extends Field {
 private int bonus;
-	public Refuge(int fieldNumber, String fieldName, int bonus) {
-		super(fieldNumber, fieldName);
+	public Refuge(int fieldNumber, int bonus) {
+		super(fieldNumber);
 		
 		this.bonus = bonus;
 	}

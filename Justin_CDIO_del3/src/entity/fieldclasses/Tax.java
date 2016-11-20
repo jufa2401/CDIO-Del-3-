@@ -10,8 +10,8 @@ import entity.Player;
  */
 public class Tax extends Field{
 	private int taxAmount, taxRate;	
-	public Tax(int fieldNumber, String fieldName, int taxAmount, int taxRate) {
-		super(fieldNumber, fieldName);
+	public Tax(int fieldNumber, int taxAmount, int taxRate) {
+		super(fieldNumber);
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
 	}
