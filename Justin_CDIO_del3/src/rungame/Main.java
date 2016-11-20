@@ -1,33 +1,29 @@
 package rungame;
 import boundary.language.LanguageHandler;
+import controller.Controller;
 import boundary.GUIHandler;
 import entity.GameBoard;
 import entity.PlayerList;
-
 public class Main {
 	public static void main (String[]args) {
 		GameBoard spil = new GameBoard();
 		GUIHandler GUI = new GUIHandler();
 		LanguageHandler language = new LanguageHandler("Dansk");
-		//PlayerList playerList = new PlayerList();
+		//		PlayerList playerList = new PlayerList();
 		GUI.createGameBoard(spil, language);
-		
-		PlayerList playerList = new PlayerList(boundary.getInteger(language.askForNumberOfPlayers(), 2, 6));
-		for(int i = 0; i < playerList.getPlayers().length; i++)
+		int playerCount = GUIHandler.getInteger(language.AskHowManyPlayers(), 2, 6);
+		PlayerList playerList = new PlayerList(playerCount);
+		for (int i = 0; i < playerCount; i++)
 		{
 			String name;
 			do {
-				name = boundary.getString(language.askForPlayerName(i+1));
-			} while (playerList.isNameTaken(name));
+				name = GUIHandler.getString(language.askForPlayerName());
+			} while (playerList.isNameUsed(i,name));
 			playerList.addPlayer(i, name);
-			boundary.addPlayer(playerList.getPlayer(i));
+			GUIHandler.addPlayer(playerList.getPlayer(i));
 		}
-	
+		Controller GameController = new Controller();
 	}
-
-	
-
-
 }
 
 

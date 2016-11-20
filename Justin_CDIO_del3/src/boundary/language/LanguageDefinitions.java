@@ -14,6 +14,12 @@ public interface LanguageDefinitions {
 
 
 	public String notifyLangChange();
+
+
+	public String AskHowManyPlayer();
+
+
+	public String AskForPlayerName();
 	
 	
 }

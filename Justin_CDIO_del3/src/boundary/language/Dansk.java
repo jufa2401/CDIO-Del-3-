@@ -9,27 +9,27 @@ public class Dansk implements LanguageDefinitions {
 		String s;
 		String names[] = {
 				//			Disse rettes senere til dansk
-				"Tribe Encampment",
-				"Crater",
-				"Walled City",
-				"Second Sail",
-				"Mountain",
-				"Cold Desert",
-				"Huts in the mountain",
-				"Goldmine",
-				"Black Cave",
-				"The Werewall",
-				"Sea Grove",
-				"The pit",
-				"Mountain village",
-				"South Citadel",
-				"Monastery",
-				"The Buccaneers",
-				"Palace gates",
-				"Tower",
-				"Caravan",
-				"Castle",
-				"Privateer armade"			
+				"Stamme Lejr",
+				"Krater",
+				"Befæstede by",
+				"Andet Sejl",
+				"Bjerg",
+				"Kold Ørken",
+				"Hytterne i bjergene",
+				"Guldmine",
+				"Sort Grotte",
+				"Varmuren",
+				"Havgrotten",
+				"Graven",
+				"Bjerglandsbyen",
+				"Fortet i syd",
+				"Kloster",
+				"Piraterne",
+				"Palads portene ",
+				"Tårnet",
+				"Karavanen",
+				"Slot",
+				"Kaperflåden"			
 		};
 		return names[id];
 	}
@@ -52,7 +52,7 @@ public class Dansk implements LanguageDefinitions {
 		String s;
 		int price = gb.getFieldPrice(id);
 		if (price > 0) {
-			s = "Prisen er:" + price;
+			s = "Prisen er: " + price;
 		} else {
 			//hvis feltet ikke er ownable (price = 0), så returneres en tom streng.
 			s = "";
@@ -62,5 +62,13 @@ public class Dansk implements LanguageDefinitions {
 	@Override
 	public String notifyLangChange(){
 		return "Sproget er sat til Dansk";
+	}
+	@Override
+	public String AskHowManyPlayer() {
+		return "Hvor mange spillere? (mellem 2 og 6) ";
+	}
+	@Override
+	public String AskForPlayerName() {
+		return "Indtast spillernavn: ";
 	}
 }

@@ -34,4 +34,14 @@ public class LanguageHandler {
 	public String getFieldPrice(int id, GameBoard gb) {
 		return selectedLanguage.getFieldPrice(id, gb);
 	}
+
+	public String AskHowManyPlayers() {
+		// TODO d stub
+		return selectedLanguage.AskHowManyPlayer();
+	}
+
+	public String askForPlayerName() {
+		// TODO Auto-generated method stub
+		return selectedLanguage.AskForPlayerName();
+	}
 }

@@ -1,16 +1,18 @@
 package entity;
-//Bør rettes!
+import entity.GameBoard;
 public class Player {
 
 	private String name;
-	private int balance, currentField, d1, d2, fleetsOwned;
+	private int balance, currentField, d1, d2, fleetsOwned, Identifier;
 	private boolean hasLost;
+	private static int AvailableIdentifer = 0;
 	//Constructor:
 	public Player (String name, int balance){
 		this.name = name;
 		this.balance = balance;
 		fleetsOwned = 0;
 		hasLost = false;
+		Identifier = AvailableIdentifer++;
 	}
 	public Player() {
 		// TODO Auto-generated constructor stub
@@ -23,7 +25,7 @@ public class Player {
 		this.name = name;
 	}
 //	 metode der tjekker om en spiller har tabt
-	public boolean isHasLost() {
+	public boolean hasLost() {
 		if (balance <= 0) {
 			hasLost = true;
 		}
@@ -88,10 +90,14 @@ public class Player {
 	public int getCurrentField() {
 		return currentField;
 	}
-	public void moveToField(int roll) {
+	public void moveToField(int roll, GameBoard gb) {
+		int length = gb.getNumberOfFields();
 		this.currentField += roll;
-		while(this.currentField > 21)
-			this.currentField -= 22;
+		while(this.currentField > length)
+			this.currentField -= length+1;
+	}
+	public int getPlayerID() {
+		return this.Identifier;
 	}
 
 
