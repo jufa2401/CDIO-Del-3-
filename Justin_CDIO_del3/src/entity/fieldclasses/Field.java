@@ -31,10 +31,7 @@ public abstract class Field {
 	public abstract int getRent();
 	public abstract int getPrice();
 
-	void landOnField(Player player){
-//		Screen.println(ULang.LandOnText(name));
-
-	}
+	public abstract void landOnField(Player player);
 }
 
 

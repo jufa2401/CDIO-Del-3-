@@ -6,6 +6,11 @@ import entity.Player;
 public class LanguageHandler {
 
 	private static LanguageDefinitions selectedLanguage;
+	public String getFieldDescription(int id, GameBoard gb){
+		return selectedLanguage.getFieldDescription(id, gb);
+		
+	}
+	
 
 	public LanguageHandler(String language) {
 		setLanguage(language);
@@ -43,5 +48,9 @@ public class LanguageHandler {
 	public String askForPlayerName() {
 		// TODO Auto-generated method stub
 		return selectedLanguage.AskForPlayerName();
+	}
+
+	public String askBuyField() {
+		return selectedLanguage.askBuyField();
 	}
 }

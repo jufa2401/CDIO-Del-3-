@@ -6,11 +6,11 @@ import entity.GameBoard;
 import entity.PlayerList;
 public class Main {
 	public static void main (String[]args) {
-		GameBoard spil = new GameBoard();
+		GameBoard game = new GameBoard();
 		GUIHandler GUI = new GUIHandler();
 		LanguageHandler language = new LanguageHandler("Dansk");
 		//		PlayerList playerList = new PlayerList();
-		GUI.createGameBoard(spil, language);
+		GUI.createGameBoard(game, language);
 		int playerCount = GUIHandler.getInteger(language.AskHowManyPlayers(), 2, 6);
 		PlayerList playerList = new PlayerList(playerCount);
 		for (int i = 0; i < playerCount; i++)
@@ -22,7 +22,7 @@ public class Main {
 			playerList.addPlayer(i, name);
 			GUIHandler.addPlayer(playerList.getPlayer(i));
 		}
-		Controller GameController = new Controller();
+		Controller GameController = new Controller(game);
 	}
 }
 

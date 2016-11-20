@@ -18,7 +18,7 @@ public class Tax extends Field{
 	}
 
 	@Override
-	void landOnField(Player player) {
+	public void landOnField(Player player) {
 		int payment;
 		if (taxRate <= 0) {
 			payment = taxAmount;

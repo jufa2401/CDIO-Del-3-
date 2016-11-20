@@ -39,12 +39,14 @@ public class GUIHandler {
 				fields[id] = new Street.Builder()
 						.setTitle(language.getFieldName(id, gb))
 						.setSubText(language.getFieldPrice(id, gb))
+						.setDescription(language.getFieldDescription(id, gb))
 						.setBgColor(gb.getFieldColor(id))
 						.build();
 			} else {
 				fields[id] = new Tax.Builder()
 						.setTitle(language.getFieldName(id, gb))
 						.setSubText(language.getFieldPrice(id, gb))
+						.setDescription(language.getFieldDescription(id, gb))
 						.setBgColor(gb.getFieldColor(id))
 						.build();
 
@@ -113,7 +115,7 @@ public class GUIHandler {
 		setCar(player.getCurrentField(), player.getName());
 	}
 	
-	private static void setCar(int currentField, String name) {
+	public static void setCar(int currentField, String name) {
 			GUI.setCar(currentField+1, name);
 		
 	}
@@ -121,6 +123,10 @@ public class GUIHandler {
 	public static void showDice(DiceCup dice) {
 		int[] d = dice.getDiceValue();
 		GUI.setDice(d[0], d[1]);
+	}
+	public static void removeCar(int currentField, String name) {
+		GUI.removeCar(currentField+1, name);
+		
 	}
 	
 }

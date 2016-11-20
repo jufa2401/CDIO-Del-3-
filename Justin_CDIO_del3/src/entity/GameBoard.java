@@ -53,8 +53,8 @@ public class GameBoard {
 	}
 
 
-	public Field[] getField() {
-		return field;
+	public Field getField(int i ) {
+		return field[i];
 	}
 	/*	Når en spiller dør, bliver deres  ejendomme ejerløse, og kan købes igen.
 	public void releasePlayersFields(Player player) {

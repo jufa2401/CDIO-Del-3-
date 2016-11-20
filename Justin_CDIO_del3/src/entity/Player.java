@@ -50,9 +50,10 @@ public class Player {
 	 *  Vi laver metode til at gemme terningsummen, denne metode er lavet specifikt 
 	 *  med hensyn til felter hvor aktionen er bestemt af terningsummen.
 	 */
-	public void SaveDiceRoll(int d1, int d2){
-		this.d1 = d1;
-		this.d2 = d2;
+	public void SaveDiceRoll(DiceCup dice){
+		int[] d = dice.getDiceValue();
+		this.d1 = d[0];
+		this.d2 = d[1];
 	}
 	public int getDiceSum() {
 		return d1 + d2;
@@ -86,16 +87,20 @@ public class Player {
 		Transaction(-amount);
 		return balance;
 	}
+	
 	//	Getters and setters for fieldnumber
 	public int getCurrentField() {
 		return currentField;
 	}
-	public void moveToField(int roll, GameBoard gb) {
+	
+	public int moveToField(int roll, GameBoard gb) {
 		int length = gb.getNumberOfFields();
 		this.currentField += roll;
 		while(this.currentField > length)
 			this.currentField -= length+1;
+		return this.currentField;
 	}
+	
 	public int getPlayerID() {
 		return this.Identifier;
 	}

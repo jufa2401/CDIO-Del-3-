@@ -19,9 +19,6 @@ public abstract class Ownable extends Field {
 
 		this.price = price;
 		this.owner = null;
-
-
-		// TODO Auto-generated constructor stub
 	}
 
 	public Player getOwner() {
@@ -29,6 +26,11 @@ public abstract class Ownable extends Field {
 	}
 	public void setOwner(Player owner) {
 		this.owner = owner;
+	}
+	
+	public void buyField(Player player) {
+		player.Transaction(-price);
+		setOwner(player);
 	}
 // if (player.hasLost =true 
 

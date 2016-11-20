@@ -21,5 +21,9 @@ public interface LanguageDefinitions {
 
 	public String AskForPlayerName();
 	
+	public String askBuyField();
+
+
+	public String getFieldDescription(int id, GameBoard gb);
 	
 }

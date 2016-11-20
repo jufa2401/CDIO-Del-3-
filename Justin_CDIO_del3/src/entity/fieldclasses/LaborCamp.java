@@ -27,20 +27,19 @@ public class LaborCamp extends Ownable {
 	}
 
 	@Override
-	void landOnField(Player player) {
+	public void landOnField(Player player) {
 		if (owner != null){
 			int rent = 100*player.getDiceSum();
 			player.payTo(owner, rent);
-		} else if (player.getBalance()>price) {
-			super.landOnField(player);
+//		} else if (player.getBalance()>price) {
+//			super.landOnField(player);
 			//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
 
 			//	!!!		Vi må ikke hente fra boundary klasserne ind i entitetsklasserne
 			//			Screen.println(ULang.askBuyField(player.getBalance(), price));
 			//			if (Keyboard.waitForYesNo()) {
-			player.Transaction(-price);
-			setOwner(player);
-
+//			player.Transaction(-price);
+//			setOwner(player);
 		}		
 
 	}
