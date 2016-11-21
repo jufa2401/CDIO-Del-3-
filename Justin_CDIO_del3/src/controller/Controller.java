@@ -5,6 +5,7 @@ import entity.PlayerList;
 import entity.fieldclasses.Field;
 import entity.DiceCup;
 import boundary.GUIHandler;
+import boundary.language.LanguageHandler;
 import entity.GameBoard;
 public class Controller {
 	DiceCup dice;
@@ -17,8 +18,9 @@ public class Controller {
 
 	public void launchGame() {
 		//		if(boundary.getButtonPressed(language.startGame()));
+		int nPlayers = PlayerList.getNumberofPlayer();
 		while(PlayerList.isWinner() == false) {
-			for(int i = 0; i < PlayerList.getNumberofPlayer(); i++)
+			for(int i = 0; i < nPlayers; i++)
 				//				Checker om der er en vinder, og spiller 'i' stadig er med i spillet
 				if(PlayerList.isWinner() == false && PlayerList.getPlayer(i).hasLost() == false)
 					gameTurn(PlayerList.getPlayer(i));
@@ -28,7 +30,7 @@ public class Controller {
 	}
 
 	public void gameTurn(Player player) {
-		//boundary.getButtonPressed(language.preMsg(player));
+		GUIHandler.getButtonPressed(LanguageHandler.GetOkMove(player), LanguageHandler.Ok());
 		dice.rollDiceCup();
 		GUIHandler.showDice(dice);
 		GUIHandler.removeCar(player.getCurrentField(), player.getName());

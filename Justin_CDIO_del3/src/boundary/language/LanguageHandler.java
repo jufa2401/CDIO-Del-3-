@@ -1,6 +1,7 @@
 package boundary.language;
 
 import entity.GameBoard;
+import entity.Player;
 
 public class LanguageHandler {
 
@@ -61,5 +62,16 @@ public class LanguageHandler {
 
 	public static String yes() {
 		return selectedLanguage.yes();
+	}
+
+
+	public static String GetOkMove(Player player) {
+		
+		return selectedLanguage.getOkMove(player);
+	}
+
+
+	public static String Ok() {
+		return selectedLanguage.Ok();
 	}
 }

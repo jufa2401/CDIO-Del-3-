@@ -26,12 +26,13 @@ public class GameLogic{
 				if (GUIHandler.getYesNo(LanguageHandler.askBuyField(), LanguageHandler.yes(), LanguageHandler.no())) {
 					ofield.buyField(player);
 					GUIHandler.setBalance(player.getName(), player.getBalance());
-					GUIHandler.setOwner(GameBoard.getFieldNumber(field), player.getName() );
+					GUIHandler.setOwner(player);
 				}
 			}
 		} else {
 //			hvis feltet ikke kan ejes
 			field.landOnField(player);
+			GUIHandler.setBalance(player.getName(), player.getBalance());
 		}
 		
 	}

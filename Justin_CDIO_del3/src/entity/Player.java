@@ -2,7 +2,7 @@ package entity;
 import entity.GameBoard;
 public class Player {
 
-	private String name;
+	private static String name;
 	private int balance, currentField, d1, d2, fleetsOwned, Identifier;
 	private boolean hasLost;
 	private static int AvailableIdentifer = 0;
@@ -12,12 +12,13 @@ public class Player {
 		this.balance = balance;
 		fleetsOwned = 0;
 		hasLost = false;
+		currentField = 0;
 		Identifier = AvailableIdentifer++;
 	}
 	public Player() {
 	}
 	//getters and setters for navn og balance 
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 	public void setName(String name) {

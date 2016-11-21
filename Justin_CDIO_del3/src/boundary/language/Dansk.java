@@ -1,6 +1,7 @@
 package boundary.language;
 
 import entity.GameBoard;
+import entity.Player;
 
 public class Dansk implements LanguageDefinitions {
 
@@ -94,5 +95,14 @@ public class Dansk implements LanguageDefinitions {
 	@Override
 	public String yes() {
 		return "Ja";
+	}
+	@Override
+	public String getOkMove(Player player) {
+		return "Det er " + player.getName()+ "'s tur, Tryk OK for at starte";
+				
+	}
+	@Override
+	public String Ok() {
+		return "OK";
 	}
 }

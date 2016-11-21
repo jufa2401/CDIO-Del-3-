@@ -135,8 +135,11 @@ public class GUIHandler {
 		GUI.setBalance(name, newBalance);
 		
 	}
-	public static void setOwner(int currentField, String name) {
-		GUI.setOwner(currentField, name);
+	public static void setOwner(Player player) {
+		GUI.setOwner(player.getCurrentField()+1, player.getName());
+	}
+	public static void getButtonPressed(String getOkMove, String ok) {
+		GUI.getUserButtonPressed(getOkMove, ok);
 	}
 }
 
