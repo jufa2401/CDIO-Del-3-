@@ -8,7 +8,7 @@ import entity.GameBoard;
 
 public class GameLogic{
 	public static void GameRules(int[] Dice, Player p){
-//		Når en spillersbalance bliver nul, bliver hans taber status sat til sand.
+		//		Når en spillersbalance bliver nul, bliver hans taber status sat til sand.
 		final int LossBalance = 0;
 		if (p.getBalance() <= LossBalance)
 			p.setHasLost(true);
@@ -16,25 +16,30 @@ public class GameLogic{
 	}
 	public static void FieldRules(Field field, Player player) {
 		if (field.getPrice() > 0) {
-//			hvis feltet kan ejes
+			//			hvis feltet kan ejes
 			Ownable ofield = (Ownable) field; 
 			if (ofield.getOwner() != null) {
 				// Der er en ejer af feltet
-				ofield.landOnField(player);
+				int paid = ofield.landOnField(player);
+				
+				//TODO: giv besked om betalt leje
+				GUIHandler.getButtonPressed(LanguageHandler.playerPayTo(player.getName(), ofield.getOwner().getName(), paid), LanguageHandler.Ok());
+				GUIHandler.setBalance(ofield.getOwner().getName(), ofield.getOwner().getBalance());
 			} else {
-				// TODO: Der er ingen ejer, skal feltet købes?
-				if (GUIHandler.getYesNo(LanguageHandler.askBuyField(), LanguageHandler.yes(), LanguageHandler.no())) {
-					ofield.buyField(player);
-					GUIHandler.setBalance(player.getName(), player.getBalance());
-					GUIHandler.setOwner(player);
+				if (player.getBalance() > ofield.getPrice()) {
+					if (GUIHandler.getYesNo(LanguageHandler.askBuyField(), LanguageHandler.yes(), LanguageHandler.no())) {
+						ofield.buyField(player);
+						GUIHandler.setOwner(player);
+					}
 				}
 			}
 		} else {
-//			hvis feltet ikke kan ejes
+			//			hvis feltet ikke kan ejes
 			field.landOnField(player);
-			GUIHandler.setBalance(player.getName(), player.getBalance());
+			//TODO: giv besked om betalt skat/givet bonus
 		}
-		
+		GUIHandler.setBalance(player.getName(), player.getBalance());
+
 	}
 
 }

@@ -2,7 +2,7 @@ package entity;
 import entity.GameBoard;
 public class Player {
 
-	private static String name;
+	private String name;
 	private int balance, currentField, d1, d2, fleetsOwned, Identifier;
 	private boolean hasLost;
 	private static int AvailableIdentifer = 0;
@@ -18,8 +18,8 @@ public class Player {
 	public Player() {
 	}
 	//getters and setters for navn og balance 
-	public static String getName() {
-		return name;
+	public String getName() {
+		return this.name;
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -28,6 +28,7 @@ public class Player {
 	public boolean hasLost() {
 		if (balance <= 0) {
 			hasLost = true;
+		//TODO: afgiv ejendomme?
 		}
 		return hasLost;
 	}
@@ -69,10 +70,12 @@ public class Player {
 		//	Hvis balancen ryger under nul bliver balancen sat til 0
 		if(balance < 0){
 			balance = 0;
-		}return balance;
+		}
+		return balance;
 	}	
 	
 	//	Giver muligheden for at betale til andre spillere, afslutter med at returnere den ændrede balance
+	//  Hvis en spiller lander på sit eget felt, trækker man i princippet fra sin egen konto, men de bliver tilført igen med det samme.
 	public int payTo (Player recipient, int amount) {
 		recipient.Transaction(amount);
 		Transaction(-amount);
@@ -87,8 +90,8 @@ public class Player {
 	public int moveToField(int roll, GameBoard gb) {
 		int length = gb.getNumberOfFields();
 		this.currentField += roll;
-		while(this.currentField > length)
-			this.currentField -= length+1;
+		while(this.currentField >= length)
+			this.currentField -= length;
 		return this.currentField;
 	}
 	

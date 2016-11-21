@@ -18,7 +18,7 @@ public class Tax extends Field{
 	}
 
 	@Override
-	public void landOnField(Player player) {
+	public int landOnField(Player player) {
 		int payment;
 		if (taxRate <= 0) {
 			payment = taxAmount;
@@ -34,6 +34,7 @@ public class Tax extends Field{
 		}
 		player.Transaction(-payment);
 		//		Tilføj output om skattebetaling og ændret balance
+		return payment;
 	}
 
 	@Override

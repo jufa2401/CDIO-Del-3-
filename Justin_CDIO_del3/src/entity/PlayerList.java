@@ -45,13 +45,27 @@ public class PlayerList {
 
 
 	public static boolean isWinner() {
-		return false;
+		int n = 0;
+		for (int c = 0; c < playerCount; c++) {
+			if (!players[c].hasLost()) {
+				n++;	
+			} 
+		}
+		return (n == 1);
+	}
+	
+	// Forudsætter at vi ved der er en vinder
+	public static String getWinner() {
+		String name = "";
+		for (int c = 0; c < playerCount; c++) {
+			if (!players[c].hasLost()) {
+				name = players[c].getName();	
+			} 
+		}
+		return name;
 	}
 
 
-	//// Fjern spiller hvis han taber?
-	//if (Player.isHasLost = true) { 
-	//	playerCount--;
 
 
 }

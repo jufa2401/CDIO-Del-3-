@@ -7,7 +7,6 @@ public class Dansk implements LanguageDefinitions {
 
 	@Override
 	public String getFieldName(int id, GameBoard gb) {
-		String s;
 		String names[] = {
 				//			Disse rettes senere til dansk
 				"Stamme Lejr",
@@ -98,11 +97,19 @@ public class Dansk implements LanguageDefinitions {
 	}
 	@Override
 	public String getOkMove(Player player) {
-		return "Det er " + player.getName()+ "'s tur, Tryk OK for at starte";
+		return "Det er " + player.getName()+ "'s tur, Tryk OK for at kaste terningerne og rykke";
 				
 	}
 	@Override
 	public String Ok() {
 		return "OK";
+	}
+	@Override
+	public String GameOver(String winner) {
+		return "Spillet er slut. Vinderen er: " + winner + ". Tillykke!";
+	}
+	@Override
+	public String playerPayTo(String payer, String recipient, int paid) {
+		return "Spiller '" + payer + "' betaler "+ paid + " til '" + recipient + "'.";
 	}
 }

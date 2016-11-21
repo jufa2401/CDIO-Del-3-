@@ -26,7 +26,8 @@ public class Controller {
 					gameTurn(PlayerList.getPlayer(i));
 		}
 		// Spillet er slut
-		//	boundary.getButtonPressed(language.winnerMsg(playerList.whoIsTheWinner()));
+		String winner = PlayerList.getWinner();
+		GUIHandler.getButtonPressed(LanguageHandler.GameOver(winner), LanguageHandler.Ok());
 	}
 
 	public void gameTurn(Player player) {

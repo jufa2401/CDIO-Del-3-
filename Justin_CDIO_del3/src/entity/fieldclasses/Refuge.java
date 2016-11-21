@@ -11,9 +11,10 @@ private int bonus;
 	}
 
 	@Override
-	public void landOnField(Player player) {
+	public int landOnField(Player player) {
 		player.Transaction(this.bonus);
 //		output bør indsættes her for at angive at spilleren har modtaget penge
+		return -this.bonus;
 	}
 
 

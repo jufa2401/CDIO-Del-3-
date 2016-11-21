@@ -18,9 +18,10 @@ public class Fleet extends Ownable {
 	}
 
 	@Override
-	public void landOnField(Player player)  {
-		if (owner != null){
-			fleetsOwned = owner.getFleetsOwned();
+	public int landOnField(Player player)  {
+		int paid = 0;
+		if (this.owner != null){
+			fleetsOwned = this.owner.getFleetsOwned();
 			switch (fleetsOwned) {
 			case 1: rent = 500;		break;
 			case 2: rent = 1000;	break;
@@ -28,7 +29,8 @@ public class Fleet extends Ownable {
 			case 4: rent = 4000;	break;
 			default: break;
 			}
-			player.payTo(owner, rent);
+			player.payTo(this.owner, rent);
+			paid = rent;
 //		} else if (player.getBalance()>price) {
 //			super.landOnField(player);
 			//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
@@ -40,7 +42,8 @@ public class Fleet extends Ownable {
 			//			Når man køber en fleet, tæller vi 1 op i vores FleetsOwned metode i player
 //			setOwner(player);
 //			player.setFleetsOwned(1+player.getFleetsOwned());
-		}		
+		}
+		return paid;		
 
 	}
 

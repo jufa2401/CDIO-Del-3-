@@ -39,6 +39,10 @@ public class LanguageHandler {
 	public String getFieldPrice(int id, GameBoard gb) {
 		return selectedLanguage.getFieldPrice(id, gb);
 	}
+	
+	public String getFieldRent(int id, GameBoard gb) {
+		return selectedLanguage.getFieldRent(id, gb);
+	}
 
 	public String AskHowManyPlayers() {
 		// TODO d stub
@@ -73,5 +77,15 @@ public class LanguageHandler {
 
 	public static String Ok() {
 		return selectedLanguage.Ok();
+	}
+
+
+	public static String GameOver(String winner) {
+		return selectedLanguage.GameOver(winner);
+	}
+
+
+	public static String playerPayTo(String payer, String recipient, int paid) {
+		return selectedLanguage.playerPayTo(payer, recipient, paid);
 	}
 }

@@ -22,7 +22,7 @@ public class GUIHandler {
 	 * har jeg valgt at lave et array some deler alle felterne ind i 2 grupper
 	 * Ownable og ikke-ownable
 	 * for at man kan kende forskel på felttyperne har jeg så inddelt mine 
-	 * felte ind i forskelligt farvede street objekter.
+	 * felte ind i forskelligt farvede objekter.
 	 * 
 	 */
 	public void createGameBoard(GameBoard gb, LanguageHandler language) {
@@ -38,6 +38,7 @@ public class GUIHandler {
 						.setSubText(language.getFieldPrice(id, gb))
 						.setDescription(language.getFieldDescription(id, gb))
 						.setBgColor(gb.getFieldColor(id))
+						.setRent(language.getFieldRent(id, gb))
 						.build();
 			} else {
 				fields[id] = new Tax.Builder()
@@ -109,11 +110,11 @@ public class GUIHandler {
 		}
 		Car car = carBuilder.build();
 		GUI.addPlayer(player.getName(), player.getBalance(), car);
-		setCar(player.getCurrentField(), player.getName());
+		GUI.setCar(player.getCurrentField()+1, player.getName()); //+1
 	}
 
 	public static void setCar(int currentField, String name) {
-		GUI.setCar(currentField+1, name);
+		GUI.setCar(currentField+1, name);						//+1
 
 	}
 
@@ -122,7 +123,7 @@ public class GUIHandler {
 		GUI.setDice(d[0], d[1]);
 	}
 	public static void removeCar(int currentField, String name) {
-		GUI.removeCar(currentField+1, name);
+		GUI.removeCar(currentField+1, name);					//+1
 
 	}
 	public static boolean getYesNo(String message, String Yes, String No) {
@@ -136,11 +137,13 @@ public class GUIHandler {
 		
 	}
 	public static void setOwner(Player player) {
-		GUI.setOwner(player.getCurrentField()+1, player.getName());
+		GUI.setOwner(player.getCurrentField()+1, player.getName());	//+1
 	}
 	public static void getButtonPressed(String getOkMove, String ok) {
 		GUI.getUserButtonPressed(getOkMove, ok);
 	}
+	
+		
 }
 
 

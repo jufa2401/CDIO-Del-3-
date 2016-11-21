@@ -28,9 +28,11 @@ public class Territory extends Ownable{
 	 *  prisen på ejendommen fratrækkes derefter balancen og ejerskabet bliver overført til spilleren
 	 *  
 	 */
-	public void landOnField(Player player) {
-		if (owner != null){
-			player.payTo(owner, rent);
+	public int landOnField(Player player) {
+		int paid = 0;
+		if (this.owner != null){
+			player.payTo(this.owner, rent);
+			paid = rent;
 //		} else if (player.getBalance()>price) {
 //			super.landOnField(player);
 			//
@@ -39,5 +41,6 @@ public class Territory extends Ownable{
 //			player.Transaction(-price);
 //			setOwner(player);
 		}
+		return paid;
 	}
 }

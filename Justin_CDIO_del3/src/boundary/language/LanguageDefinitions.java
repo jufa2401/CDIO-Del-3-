@@ -38,5 +38,11 @@ public interface LanguageDefinitions {
 
 	public String Ok();
 
+
+	public String GameOver(String winner);
+
+
+	public String playerPayTo(String payer, String recipient, int paid);
+
 	
 }

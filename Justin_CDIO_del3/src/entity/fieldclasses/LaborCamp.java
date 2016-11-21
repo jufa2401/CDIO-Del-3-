@@ -19,10 +19,11 @@ public class LaborCamp extends Ownable {
 	}
 
 	@Override
-	public void landOnField(Player player) {
-		if (owner != null){
-			int rent = 100*player.getDiceSum();
-			player.payTo(owner, rent);
+	public int landOnField(Player player) {
+		int paid = 0;
+		if (this.owner != null){
+			paid = 100*player.getDiceSum();
+			player.payTo(this.owner, paid);
 //		} else if (player.getBalance()>price) {
 //			super.landOnField(player);
 			//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
@@ -32,7 +33,8 @@ public class LaborCamp extends Ownable {
 			//			if (Keyboard.waitForYesNo()) {
 //			player.Transaction(-price);
 //			setOwner(player);
-		}		
+		}
+		return paid;		
 
 	}
 	@Override
