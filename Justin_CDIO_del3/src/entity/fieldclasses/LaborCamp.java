@@ -9,21 +9,13 @@ import java.awt.Color;
  */
 import entity.Player;
 public class LaborCamp extends Ownable {
-	/**
-	 * @param FieldName
-	 * @param price
-	 * @param owner
-	 */
+
 	public LaborCamp(int fieldNumber, Color color, int price) {
 		super(fieldNumber, color, price);
 		/*
 		 * Vi vil gerne hente terningsummen
 		 * fra vores dicecup klasse
 		 */
-
-
-
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -45,7 +37,6 @@ public class LaborCamp extends Ownable {
 	}
 	@Override
 	public int getPrice() {
-		// TODO Auto-generated method stub
 		return this.price;
 	}
 

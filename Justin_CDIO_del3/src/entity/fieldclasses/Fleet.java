@@ -13,17 +13,9 @@ import entity.Player;
 public class Fleet extends Ownable {
 	int rent, fleetsOwned;
 
-
-	/**
-	 * @param FieldName
-	 * @param price
-	 * @param owner
-	 */
 	public Fleet(int fieldNumber, Color color, int price) {
 		super(fieldNumber, color, price);
-		// TODO Auto-generated constructor stub
 	}
-
 
 	@Override
 	public void landOnField(Player player)  {
@@ -58,18 +50,13 @@ public class Fleet extends Ownable {
 		player.setFleetsOwned(1+player.getFleetsOwned());
 	}
 
-
 	@Override
 	public int getRent() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
-
 	@Override
 	public int getPrice() {
-		// TODO Auto-generated method stub
 		return this.price;
 	}
-
 }

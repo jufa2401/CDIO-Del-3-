@@ -1,6 +1,5 @@
 package entity.fieldclasses;
 import java.awt.Color;
-
 import entity.Player;
 
 /*
@@ -31,6 +30,7 @@ public abstract class Ownable extends Field {
 	public void buyField(Player player) {
 		player.Transaction(-price);
 		setOwner(player);
+	
 	}
 // if (player.hasLost =true 
 

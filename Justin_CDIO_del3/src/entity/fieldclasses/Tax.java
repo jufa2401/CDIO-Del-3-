@@ -38,13 +38,11 @@ public class Tax extends Field{
 
 	@Override
 	public int getRent() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int getPrice() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

@@ -7,10 +7,10 @@ public class PlayerList {
 
 
 	public PlayerList (int playerCount) {
-		this.players = new Player[playerCount];
+		PlayerList.players = new Player[playerCount];
 		for (int c = 0; c < playerCount; c++)
 			players[c] = new Player();
-		this.playerCount = playerCount;
+		PlayerList.playerCount = playerCount;
 	}
 
 
@@ -45,7 +45,6 @@ public class PlayerList {
 
 
 	public static boolean isWinner() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

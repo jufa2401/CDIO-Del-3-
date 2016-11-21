@@ -5,10 +5,7 @@ import entity.DiceCup;
 import boundary.language.LanguageHandler;
 import desktop_codebehind.Car;
 import desktop_codebehind.Car.Builder;
-import desktop_fields.Brewery;
 import desktop_fields.Field;
-import desktop_fields.Refuge;
-import desktop_fields.Shipping;
 import desktop_fields.Street;
 import desktop_fields.Tax;
 import desktop_resources.GUI;
@@ -19,15 +16,15 @@ import entity.Player;
 //omgcr
 
 public class GUIHandler {
-	
-/*	
- * I stedet for at inddele vores felter i de forskellige builder felter,
- * har jeg valgt at lave et array some deler alle felterne ind i 2 grupper
- * Ownable og ikke-ownable
- * for at man kan kende forskel på felttyperne har jeg så inddelt mine 
- * felte ind i forskelligt farvede street objekter.
- * 
- */
+
+	/*	
+	 * I stedet for at inddele vores felter i de forskellige builder felter,
+	 * har jeg valgt at lave et array some deler alle felterne ind i 2 grupper
+	 * Ownable og ikke-ownable
+	 * for at man kan kende forskel på felttyperne har jeg så inddelt mine 
+	 * felte ind i forskelligt farvede street objekter.
+	 * 
+	 */
 	public void createGameBoard(GameBoard gb, LanguageHandler language) {
 		int id;
 		int length = gb.getNumberOfFields();
@@ -67,10 +64,10 @@ public class GUIHandler {
 		switch (player.getPlayerID()){
 		case 0:
 			carBuilder
-			.typeUfo()
-			.patternCheckered()
-			.primaryColor(Color.RED)
-			.secondaryColor(Color.GRAY);
+			.typeRacecar()
+			.patternHorizontalGradiant()
+			.primaryColor(Color.BLACK)
+			.secondaryColor(Color.DARK_GRAY);
 			break;
 		case 1:
 			carBuilder
@@ -95,17 +92,17 @@ public class GUIHandler {
 			break;
 		case 4:
 			carBuilder
-			.typeRacecar()
-			.patternHorizontalGradiant()
-			.primaryColor(Color.BLACK)
-			.secondaryColor(Color.WHITE);
+			.typeUfo()
+			.patternCheckered()
+			.primaryColor(Color.RED)
+			.secondaryColor(Color.BLACK);
 			break;
 		case 5:
 			carBuilder
 			.typeTractor()
 			.patternHorizontalDualColor()
 			.primaryColor(Color.WHITE)
-			.secondaryColor(Color.PINK);
+			.secondaryColor(Color.GREEN);
 			break;
 		default:
 			break;
@@ -114,10 +111,10 @@ public class GUIHandler {
 		GUI.addPlayer(player.getName(), player.getBalance(), car);
 		setCar(player.getCurrentField(), player.getName());
 	}
-	
+
 	public static void setCar(int currentField, String name) {
-			GUI.setCar(currentField+1, name);
-		
+		GUI.setCar(currentField+1, name);
+
 	}
 
 	public static void showDice(DiceCup dice) {
@@ -126,8 +123,22 @@ public class GUIHandler {
 	}
 	public static void removeCar(int currentField, String name) {
 		GUI.removeCar(currentField+1, name);
+
+	}
+	public static boolean getYesNo(String message, String Yes, String No) {
+		String response = GUI.getUserButtonPressed(message, Yes, No);
+		if (response.equals(Yes))
+			return true;
+		else return false;
+	}
+	public static void setBalance(String name, int newBalance) {
+		GUI.setBalance(name, newBalance);
 		
 	}
-	
+	public static void setOwner(int currentField, String name) {
+		GUI.setOwner(currentField, name);
+	}
 }
+
+
 

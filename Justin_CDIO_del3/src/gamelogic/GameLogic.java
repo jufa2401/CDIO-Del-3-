@@ -1,8 +1,10 @@
 package gamelogic;
 
 import boundary.GUIHandler;
+import boundary.language.LanguageHandler;
 import entity.Player;
 import entity.fieldclasses.*;
+import entity.GameBoard;
 
 public class GameLogic{
 	public static void GameRules(int[] Dice, Player p){
@@ -21,8 +23,10 @@ public class GameLogic{
 				ofield.landOnField(player);
 			} else {
 				// TODO: Der er ingen ejer, skal feltet købes?
-				if (GUIHandler.getBoolean(language.askBuyField())) {
+				if (GUIHandler.getYesNo(LanguageHandler.askBuyField(), LanguageHandler.yes(), LanguageHandler.no())) {
 					ofield.buyField(player);
+					GUIHandler.setBalance(player.getName(), player.getBalance());
+					GUIHandler.setOwner(GameBoard.getFieldNumber(field), player.getName() );
 				}
 			}
 		} else {

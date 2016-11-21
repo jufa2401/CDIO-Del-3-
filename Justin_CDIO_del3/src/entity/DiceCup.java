@@ -16,7 +16,7 @@ public class DiceCup {
 		d2.roll();	
 	}
 
-	public static int[] getDiceValue()	{
+	public int[] getDiceValue()	{
 		int[] array = {d1.getValue(), d2.getValue()};
 		return array;
 	}	

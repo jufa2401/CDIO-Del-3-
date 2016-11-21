@@ -87,4 +87,12 @@ public class Dansk implements LanguageDefinitions {
 		}
 		return s;
 	}
+	@Override
+	public String no() {
+		return "Nej";
+	}
+	@Override
+	public String yes() {
+		return "Ja";
+	}
 }

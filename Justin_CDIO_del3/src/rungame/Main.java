@@ -23,6 +23,7 @@ public class Main {
 			GUIHandler.addPlayer(playerList.getPlayer(i));
 		}
 		Controller GameController = new Controller(game);
+		GameController.launchGame();
 	}
 }
 

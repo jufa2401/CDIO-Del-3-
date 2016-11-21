@@ -15,7 +15,6 @@ public class Player {
 		Identifier = AvailableIdentifer++;
 	}
 	public Player() {
-		// TODO Auto-generated constructor stub
 	}
 	//getters and setters for navn og balance 
 	public String getName() {
@@ -71,16 +70,7 @@ public class Player {
 			balance = 0;
 		}return balance;
 	}	
-	/*	
-	 *  DEPRECATED: Metode til skattebetaling, som vi har
-	 * 	valgt at rykket over (og videreudviklet) i taxfelterne  i stedet.
-
-	public int taxDeduction(int rate){
-		balance = (balance * (100-rate))/100;
-		return balance;
-	}
-	 */
-
+	
 	//	Giver muligheden for at betale til andre spillere, afslutter med at returnere den ændrede balance
 	public int payTo (Player recipient, int amount) {
 		recipient.Transaction(amount);

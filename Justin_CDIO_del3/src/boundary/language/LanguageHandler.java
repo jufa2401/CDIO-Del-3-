@@ -1,7 +1,6 @@
 package boundary.language;
 
 import entity.GameBoard;
-import entity.Player;
 
 public class LanguageHandler {
 
@@ -50,7 +49,17 @@ public class LanguageHandler {
 		return selectedLanguage.AskForPlayerName();
 	}
 
-	public String askBuyField() {
+	public static String askBuyField() {
 		return selectedLanguage.askBuyField();
+	}
+
+
+	public static String no() {
+		return selectedLanguage.no();
+	}
+
+
+	public static String yes() {
+		return selectedLanguage.yes();
 	}
 }

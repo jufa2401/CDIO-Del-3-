@@ -11,7 +11,7 @@ import entity.fieldclasses.Tax;
 import entity.fieldclasses.Territory;
 // Hvad er rækkefølgen af felterne?a
 public class GameBoard {
-	private Field[] field;
+	private static Field[] field;
 
 
 	public GameBoard() {
@@ -39,7 +39,7 @@ public class GameBoard {
 		field[19] = new Territory(20, Color.RED, 8000, 4000);	
 		field[20] = new Fleet(21, Color.BLUE, 4000);
 	}	
-	public int getNumberOfFields () {
+	public static int getNumberOfFields () {
 		return Array.getLength(field);
 	}
 	public Color getFieldColor(int index) {
@@ -52,11 +52,21 @@ public class GameBoard {
 		return field[index].getPrice();
 	}
 
-
 	public Field getField(int i ) {
 		return field[i];
 	}
-	/*	Når en spiller dør, bliver deres  ejendomme ejerløse, og kan købes igen.
+
+
+	public static int getFieldNumber(Field f) {
+		int i;
+		for (i = 0; i< getNumberOfFields(); i++){
+			if (f.getID() == field[i].getID())
+				break;
+		}
+		return i;
+	}
+}
+/*	Når en spiller dør, bliver deres  ejendomme ejerløse, og kan købes igen.
 	public void releasePlayersFields(Player player) {
 		for(int i = 0; i < field.length; i++)
 			if(field[i].isOwnable())
@@ -64,10 +74,10 @@ public class GameBoard {
 					if(getField(i).getOwner().getName().equals(player.getName()))
 						fields[i].setOwner(null);
 
-	 */
+ */
 
 
 
 
 
-}
+
