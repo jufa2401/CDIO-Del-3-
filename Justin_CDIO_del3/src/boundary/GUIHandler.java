@@ -1,15 +1,13 @@
 package boundary;
-import java.awt.Color; 
+import java.awt.Color;
 
 import boundary.language.LanguageHandler;
-import entity.DiceCup;
 import desktop_codebehind.Car;
 import desktop_codebehind.Car.Builder;
-import desktop_fields.Brewery;
 import desktop_fields.Field;
 import desktop_fields.Street;
-import desktop_fields.Tax;
 import desktop_resources.GUI;
+import entity.DiceCup;
 import entity.GameBoard;
 import entity.Player;
 
