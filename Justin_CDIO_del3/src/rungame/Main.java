@@ -8,6 +8,7 @@ public class Main {
 	public static void main (String[]args) {
 		GameBoard game = new GameBoard();
 		GUIHandler GUI = new GUIHandler();
+//		Sætter sproget til dansk, flere sprog kan udvikles i language pakken, ved at implemente
 		LanguageHandler language = new LanguageHandler("Dansk");
 		//		PlayerList playerList = new PlayerList();
 		GUI.createGameBoard(game, language);

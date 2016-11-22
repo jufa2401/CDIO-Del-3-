@@ -1,6 +1,6 @@
 package boundary.language;
 
-import entity.GameBoard;
+import entity.GameBoard; 
 import entity.Player;
 
 public class Dansk implements LanguageDefinitions {
@@ -34,7 +34,7 @@ public class Dansk implements LanguageDefinitions {
 		return names[id];
 	}
 	@Override
-
+//	TODO: udskriv ting fra entiterne med lavere kobling
 	public String getFieldRent(int id, GameBoard gb) {
 		String s;
 		int rent = gb.getFieldRent(id);

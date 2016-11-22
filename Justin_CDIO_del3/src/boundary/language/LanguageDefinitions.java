@@ -1,10 +1,11 @@
-package boundary.language;
+  package boundary.language;
 
-import entity.GameBoard;
-import entity.Player;
+  	import entity.GameBoard; 
+	import entity.Player;
 
-public interface LanguageDefinitions {
+	public interface LanguageDefinitions {
 
+	
 	public String getFieldName(int id, GameBoard gb);
 	
 	

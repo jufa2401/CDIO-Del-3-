@@ -50,7 +50,7 @@ public class GUIHandler {
 			}
 		}
 		GUI.create(fields);
-		GUI.setDice(1, 1);
+//		GUI.setDice(1, 1);
 	}
 	public static int getInteger(String message, int min, int max) {
 		return GUI.getUserInteger(message, min, max);
