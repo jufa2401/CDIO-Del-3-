@@ -1,8 +1,6 @@
 package entity;
 import java.awt.Color;
-
 import java.lang.reflect.Array;
-
 import entity.fieldclasses.Field;
 import entity.fieldclasses.Fleet;
 import entity.fieldclasses.LaborCamp;
@@ -15,7 +13,7 @@ public class GameBoard {
 
 
 	public GameBoard() {
-		this.field = new Field[21];
+		GameBoard.field = new Field[21];
 
 		field[0] = new Territory(1, Color.RED, 1000, 100);
 		field[1] = new Territory(2, Color.RED, 1500, 300);

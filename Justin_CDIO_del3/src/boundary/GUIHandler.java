@@ -9,7 +9,6 @@ import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_fields.Tax;
 import desktop_resources.GUI;
-import entity.DiceCup;
 import entity.GameBoard;
 import entity.Player;
 

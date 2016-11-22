@@ -3,8 +3,8 @@ package gamelogic;
 import boundary.GUIHandler;
 import boundary.language.LanguageHandler;
 import entity.Player;
-import entity.fieldclasses.*;
-import entity.GameBoard;
+import entity.fieldclasses.Field;
+import entity.fieldclasses.Ownable;
 
 public class GameLogic{
 	public static void GameRules(int[] Dice, Player p){

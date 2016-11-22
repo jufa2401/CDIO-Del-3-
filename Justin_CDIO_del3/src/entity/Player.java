@@ -88,7 +88,7 @@ public class Player {
 	}
 	
 	public int moveToField(int roll, GameBoard gb) {
-		int length = gb.getNumberOfFields();
+		int length = GameBoard.getNumberOfFields();
 		this.currentField += roll;
 		while(this.currentField >= length)
 			this.currentField -= length;
