@@ -42,4 +42,9 @@ public class Territory extends Ownable{
 		}
 		return paid;
 	}
+
+	@Override
+	public int getType() {
+		return 5; // Territory
+	}
 }

@@ -62,4 +62,9 @@ public class Fleet extends Ownable {
 	public int getPrice() {
 		return this.price;
 	}
+
+	@Override
+	public int getType() {
+		return 1;	// Fleet
+	}
 }

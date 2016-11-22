@@ -25,7 +25,7 @@ public class DiceCup {
 	 * Method getDiceSum returns the sum of the two dice objects. 
 	 * @return
 	 */
-	public static int getDiceSum()	{
+	public int getDiceSum()	{
 		return d1.getValue() + d2.getValue();
 	}	
 

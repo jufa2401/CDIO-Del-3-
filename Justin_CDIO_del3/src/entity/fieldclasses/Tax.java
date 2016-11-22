@@ -47,4 +47,9 @@ public class Tax extends Field{
 		return 0;
 	}
 
+	@Override
+	public int getType() {
+		return 4;	// Tax
+	}
+
 }

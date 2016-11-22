@@ -48,5 +48,10 @@ public class LaborCamp extends Ownable {
 		return 0;
 	}
 
+	@Override
+	public int getType() {
+		return 2;	// Labor Camp
+	}
+
 
 }

@@ -30,6 +30,7 @@ public abstract class Field {
 	
 	public abstract int getRent();
 	public abstract int getPrice();
+	public abstract int getType();
 
 	public abstract int landOnField(Player player);
 }

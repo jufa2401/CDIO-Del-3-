@@ -1,10 +1,11 @@
 package boundary;
-import java.awt.Color;
+import java.awt.Color; 
 
 import boundary.language.LanguageHandler;
 import entity.DiceCup;
 import desktop_codebehind.Car;
 import desktop_codebehind.Car.Builder;
+import desktop_fields.Brewery;
 import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_fields.Tax;
@@ -15,7 +16,7 @@ import entity.Player;
 //omgcr
 
 public class GUIHandler {
-
+	int length = 0;
 	/*	
 	 * I stedet for at inddele vores felter i de forskellige builder felter,
 	 * har jeg valgt at lave et array some deler alle felterne ind i 2 grupper
@@ -26,7 +27,7 @@ public class GUIHandler {
 	 */
 	public void createGameBoard(GameBoard gb, LanguageHandler language) {
 		int id;
-		int length = gb.getNumberOfFields();
+		length = gb.getNumberOfFields();
 		Field[] fields = new Field[length];
 		for (id = 0; id < length; id++) {
 			int price = gb.getFieldPrice(id);
@@ -40,26 +41,27 @@ public class GUIHandler {
 						.setRent(language.getFieldRent(id, gb))
 						.build();
 			} else {
-				fields[id] = new Tax.Builder()
+				fields[id] = new Street.Builder()
 						.setTitle(language.getFieldName(id, gb))
 						.setSubText(language.getFieldPrice(id, gb))
 						.setDescription(language.getFieldDescription(id, gb))
 						.setBgColor(gb.getFieldColor(id))
 						.build();
+				
 
 			}
 		}
 		GUI.create(fields);
 //		GUI.setDice(1, 1);
 	}
-	public static int getInteger(String message, int min, int max) {
+	public int getInteger(String message, int min, int max) {
 		return GUI.getUserInteger(message, min, max);
 	}
 
-	public static String getString(String message) {
+	public String getString(String message) {
 		return GUI.getUserString(message);
 	}
-	public static void addPlayer(Player player) {
+	public void addPlayer(Player player) {
 		Builder carBuilder = new Car.Builder();
 		switch (player.getPlayerID()){
 		case 0:
@@ -112,33 +114,35 @@ public class GUIHandler {
 		GUI.setCar(player.getCurrentField()+1, player.getName()); //+1
 	}
 
-	public static void setCar(int currentField, String name) {
+	public void setCar(int currentField, String name) {
 		GUI.setCar(currentField+1, name);						//+1
-
 	}
 
-	public static void showDice(DiceCup dice) {
+	public void showDice(DiceCup dice) {
 		int[] d = dice.getDiceValue();
 		GUI.setDice(d[0], d[1]);
 	}
-	public static void removeCar(int currentField, String name) {
+	public void removeCar(int currentField, String name) {
 		GUI.removeCar(currentField+1, name);					//+1
 
 	}
-	public static boolean getYesNo(String message, String Yes, String No) {
+	public boolean getYesNo(String message, String Yes, String No) {
 		String response = GUI.getUserButtonPressed(message, Yes, No);
 		if (response.equals(Yes))
 			return true;
 		else return false;
 	}
-	public static void setBalance(String name, int newBalance) {
+	public void setBalance(String name, int newBalance) {
 		GUI.setBalance(name, newBalance);
 		
 	}
-	public static void setOwner(Player player) {
-		GUI.setOwner(player.getCurrentField()+1, player.getName());	//+1
+	public void setOwner(int currentField, String player) {
+		GUI.setOwner(currentField+1, player);	//+1
 	}
-	public static void getButtonPressed(String getOkMove, String ok) {
+	public void removeOwner(int i) {
+		GUI.removeOwner(i+1);	//+1
+	}
+	public void getButtonPressed(String getOkMove, String ok) {
 		GUI.getUserButtonPressed(getOkMove, ok);
 	}
 	

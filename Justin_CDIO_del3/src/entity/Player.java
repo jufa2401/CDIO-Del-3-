@@ -86,9 +86,9 @@ public class Player {
 	public int getCurrentField() {
 		return currentField;
 	}
-	
+//	Når vi rykker os udover arraylængden roller vi, og trækker arraylængden fra.
 	public int moveToField(int roll, GameBoard gb) {
-		int length = GameBoard.getNumberOfFields();
+		int length = gb.getNumberOfFields();
 		this.currentField += roll;
 		while(this.currentField >= length)
 			this.currentField -= length;

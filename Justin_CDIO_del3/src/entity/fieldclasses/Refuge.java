@@ -29,8 +29,12 @@ private int bonus;
 		return 0;
 	}
 
-	
-		
+	@Override
+	public int getType() {
+		return 3;	// Refuge
 	}
+
+	
+}
 
 

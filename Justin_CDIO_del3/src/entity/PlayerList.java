@@ -2,15 +2,15 @@ package entity;
 
 public class PlayerList {
 	//Tomt Playerarray
-	private static int playerCount;
-	private static Player[] players;
+	private int playerCount;
+	private Player[] players;
 
 
 	public PlayerList (int playerCount) {
-		PlayerList.players = new Player[playerCount];
+		this.players = new Player[playerCount];
 		for (int c = 0; c < playerCount; c++)
 			players[c] = new Player();
-		PlayerList.playerCount = playerCount;
+		this.playerCount = playerCount;
 	}
 
 
@@ -21,11 +21,11 @@ public class PlayerList {
 	
 
 
-	public static Player getPlayer(int ID) {
+	public Player getPlayer(int ID) {
 		
 		return players[ID];
 	}
-	public static int getNumberofPlayer() {
+	public int getNumberofPlayer() {
 		return playerCount;
 	}
 
@@ -44,7 +44,7 @@ public class PlayerList {
 	}
 
 
-	public static boolean isWinner() {
+	public boolean isWinner() {
 		int n = 0;
 		for (int c = 0; c < playerCount; c++) {
 			if (!players[c].hasLost()) {
@@ -55,7 +55,7 @@ public class PlayerList {
 	}
 	
 	// Forudsætter at vi ved der er en vinder
-	public static String getWinner() {
+	public String getWinner() {
 		String name = "";
 		for (int c = 0; c < playerCount; c++) {
 			if (!players[c].hasLost()) {
@@ -64,8 +64,6 @@ public class PlayerList {
 		}
 		return name;
 	}
-
-
 
 
 }

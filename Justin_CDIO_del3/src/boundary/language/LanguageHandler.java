@@ -1,14 +1,12 @@
 package boundary.language;
 
-import entity.GameBoard; 
-import entity.Player;
+import entity.GameBoard;
 
 public class LanguageHandler {
 
 	private static LanguageDefinitions selectedLanguage;
-	public String getFieldDescription(int id, GameBoard gb){
+	public String getFieldDescription(int id, GameBoard gb) {
 		return selectedLanguage.getFieldDescription(id, gb);
-		
 	}
 	
 
@@ -45,47 +43,44 @@ public class LanguageHandler {
 	}
 
 	public String AskHowManyPlayers() {
-		// TODO d stub
 		return selectedLanguage.AskHowManyPlayer();
 	}
 
 	public String askForPlayerName() {
-		// TODO Auto-generated method stub
 		return selectedLanguage.AskForPlayerName();
 	}
 
-	public static String askBuyField() {
+	public String askBuyField() {
 		return selectedLanguage.askBuyField();
 	}
 
 
-	public static String no() {
+	public String no() {
 		return selectedLanguage.no();
 	}
 
 
-	public static String yes() {
+	public String yes() {
 		return selectedLanguage.yes();
 	}
 
 
-	public static String GetOkMove(Player player) {
-		
-		return selectedLanguage.getOkMove(player);
+	public String GetOkMove(String s) {
+		return selectedLanguage.getOkMove(s);
 	}
 
 
-	public static String Ok() {
+	public String Ok() {
 		return selectedLanguage.Ok();
 	}
 
 
-	public static String GameOver(String winner) {
+	public String GameOver(String winner) {
 		return selectedLanguage.GameOver(winner);
 	}
 
 
-	public static String playerPayTo(String payer, String recipient, int paid) {
+	public String playerPayTo(String payer, String recipient, int paid) {
 		return selectedLanguage.playerPayTo(payer, recipient, paid);
 	}
 }

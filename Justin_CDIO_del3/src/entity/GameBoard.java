@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import entity.fieldclasses.Field;
 import entity.fieldclasses.Fleet;
 import entity.fieldclasses.LaborCamp;
+import entity.fieldclasses.Ownable;
 import entity.fieldclasses.Refuge;
 import entity.fieldclasses.Tax;
 import entity.fieldclasses.Territory;
@@ -40,7 +41,7 @@ public class GameBoard {
 		field[19] = new Territory(20, Color.RED, 8000, 4000);	
 		field[20] = new Fleet(21, Color.BLUE, 4000);
 	}	
-	public static int getNumberOfFields () {
+	public int getNumberOfFields () {
 		return Array.getLength(field);
 	}
 	public Color getFieldColor(int index) {
@@ -52,19 +53,34 @@ public class GameBoard {
 	public int getFieldPrice(int index) {
 		return field[index].getPrice();
 	}
+	public int getFieldType(int index) {
+		return field[index].getType();
+	}
 
 	public Field getField(int i ) {
 		return field[i];
 	}
 
-
-	public static int getFieldNumber(Field f) {
+	public int getFieldNumber(Field f) {
 		int i;
 		for (i = 0; i< getNumberOfFields(); i++){
 			if (f.getID() == field[i].getID())
 				break;
 		}
 		return i;
+	}
+
+	public boolean removeFieldOwner(int n, Player player) {
+		boolean freed = false;
+		if (field[n].getPrice() > 0) {	// hvis feltet kan ejes
+			Ownable ofield = (Ownable) field[n]; 
+			Player owner = ofield.getOwner();
+			if (owner == player) {	// Kan man det, eller sammenlign navne?
+				ofield.setOwner(null);
+				freed = true;
+			}
+		}
+		return freed;
 	}
 
 }
