@@ -7,7 +7,6 @@ import entity.fieldclasses.LaborCamp;
 import entity.fieldclasses.Refuge;
 import entity.fieldclasses.Tax;
 import entity.fieldclasses.Territory;
-// Hvad er rækkefølgen af felterne?a
 public class GameBoard {
 	private static Field[] field;
 
@@ -15,13 +14,17 @@ public class GameBoard {
 	public GameBoard() {
 		GameBoard.field = new Field[21];
 
+//		Territory parametre: id, feltfarve, feltpris, leje
 		field[0] = new Territory(1, Color.RED, 1000, 100);
 		field[1] = new Territory(2, Color.RED, 1500, 300);
+//		Refuge parametre: id, feltfarve, bonus 
 		field[2] = new Refuge(3, Color.CYAN, 5000);
+//		Fleet parametre: id, pris
 		field[3] = new Fleet(4, Color.BLUE, 4000);
 		field[4] = new Territory(5, Color.RED, 2000, 500);
 		field[5] = new Territory(6, Color.RED, 3000, 700);
 		field[6] = new LaborCamp(7, Color.GREEN, 2500);
+//		Tax parametre: id, feltfarve, fast skattebeløv, skatte pct.
 		field[7] = new Tax(8, Color.YELLOW, 2000, 0);
 		field[8] = new Territory(9, Color.RED, 4000, 1000);
 		field[9] = new Territory(10, Color.RED, 4300, 1300);
@@ -63,16 +66,12 @@ public class GameBoard {
 		}
 		return i;
 	}
-}
-/*	Når en spiller dør, bliver deres  ejendomme ejerløse, og kan købes igen.
-	public void releasePlayersFields(Player player) {
-		for(int i = 0; i < field.length; i++)
-			if(field[i].isOwnable())
-				if(fields[i].getOwner() != null)
-					if(getField(i).getOwner().getName().equals(player.getName()))
-						fields[i].setOwner(null);
 
- */
+}
+
+
+
+
 
 
 

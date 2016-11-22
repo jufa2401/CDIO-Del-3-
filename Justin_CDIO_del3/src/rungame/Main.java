@@ -1,7 +1,7 @@
 package rungame;
-import boundary.language.LanguageHandler;
 import controller.Controller;
 import boundary.GUIHandler;
+import boundary.language.LanguageHandler;
 import entity.GameBoard;
 import entity.PlayerList;
 public class Main {

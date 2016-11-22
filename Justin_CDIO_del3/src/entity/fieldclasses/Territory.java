@@ -28,18 +28,17 @@ public class Territory extends Ownable{
 	 *  prisen på ejendommen fratrækkes derefter balancen og ejerskabet bliver overført til spilleren
 	 *  TODO: Spilleren bør ikke trække leje fra sin egen konto og tilføje dem tilbage, hvis han lander på sit eget felt.
 	 */
+	/**
+	 * Method landOnField checker om der er ejer på et felt,
+	 * hvis der er ejer på et felt, betales der til ejeren. 
+	 * @return
+	 */
+
 	public int landOnField(Player player) {
 		int paid = 0;
 		if (this.owner != null){
 			player.payTo(this.owner, rent);
 			paid = rent;
-//		} else if (player.getBalance()>price) {
-//			super.landOnField(player);
-			//
-			//			Screen.println(ULang.askBuyField(player.getBalance(), price));
-			//			if (Keyboard.waitForYesNo()) {
-//			player.Transaction(-price);
-//			setOwner(player);
 		}
 		return paid;
 	}

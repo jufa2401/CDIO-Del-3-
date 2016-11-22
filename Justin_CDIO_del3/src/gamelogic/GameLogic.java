@@ -2,18 +2,29 @@ package gamelogic;
 
 import boundary.GUIHandler;
 import boundary.language.LanguageHandler;
+import entity.GameBoard;
 import entity.Player;
+import entity.PlayerList;
 import entity.fieldclasses.Field;
 import entity.fieldclasses.Ownable;
 
 public class GameLogic{
-	public static void GameRules(int[] Dice, Player p){
-		//		Når en spillersbalance bliver nul, bliver hans taber status sat til sand.
-		final int LossBalance = 0;
-		if (p.getBalance() <= LossBalance)
-			p.setHasLost(true);
 
-	}
+	//	TODO: Fjern ejendomme når en spiller dør.
+//	public static void GameRules(Player player, Field field){
+//
+//		Ownable ofield = (Ownable) field; 
+//		for(int i = 0; i < GameBoard.getNumberOfFields(); i++){
+//			if (PlayerList.getPlayer(i).hasLost() == true) { 
+//				ofield.setOwner(null);
+//
+//
+//			}
+//		}
+//	}
+
+
+
 	public static void FieldRules(Field field, Player player) {
 		if (field.getPrice() > 0) {
 			//			hvis feltet kan ejes
@@ -21,7 +32,7 @@ public class GameLogic{
 			if (ofield.getOwner() != null) {
 				// Der er en ejer af feltet
 				int paid = ofield.landOnField(player);
-				
+
 				//TODO: giv besked om betalt leje
 				GUIHandler.getButtonPressed(LanguageHandler.playerPayTo(player.getName(), ofield.getOwner().getName(), paid), LanguageHandler.Ok());
 				GUIHandler.setBalance(ofield.getOwner().getName(), ofield.getOwner().getBalance());

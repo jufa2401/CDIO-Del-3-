@@ -1,6 +1,6 @@
 package boundary.language;
 
-import entity.GameBoard;
+import entity.GameBoard; 
 import entity.Player;
 
 public class LanguageHandler {
