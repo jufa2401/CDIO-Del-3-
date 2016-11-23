@@ -1,5 +1,5 @@
 package entity;
-import entity.GameBoard;
+
 public class Player {
 
 	private String name;

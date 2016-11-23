@@ -66,19 +66,19 @@ public class GUIHandler {
 			carBuilder
 			.typeRacecar()
 			.patternHorizontalGradiant()
-			.primaryColor(Color.BLACK)
+			.primaryColor(Color.MAGENTA)
 			.secondaryColor(Color.DARK_GRAY);
 			break;
 		case 1:
 			carBuilder
-			.typeRacecar()
+			.typeTractor()
 			.patternDiagonalDualColor()
 			.primaryColor(Color.GREEN)
 			.secondaryColor(Color.ORANGE);
 			break;
 		case 2:
 			carBuilder
-			.typeTractor()
+			.typeRacecar()
 			.patternDotted()
 			.primaryColor(Color.BLUE)
 			.secondaryColor(Color.CYAN);
@@ -92,14 +92,14 @@ public class GUIHandler {
 			break;
 		case 4:
 			carBuilder
-			.typeUfo()
+			.typeTractor()
 			.patternCheckered()
 			.primaryColor(Color.RED)
 			.secondaryColor(Color.BLACK);
 			break;
 		case 5:
 			carBuilder
-			.typeTractor()
+			.typeUfo()
 			.patternHorizontalDualColor()
 			.primaryColor(Color.WHITE)
 			.secondaryColor(Color.GREEN);

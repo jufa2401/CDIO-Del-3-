@@ -1,5 +1,5 @@
 package entity;
-import entity.Die;
+
 public class DiceCup {
 
 

@@ -1,5 +1,6 @@
 package entity.fieldclasses;
 import java.awt.Color;
+
 import entity.Player;
 /*
  * Denne type felt har en pris,

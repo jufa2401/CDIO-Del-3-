@@ -1,6 +1,7 @@
 package entity;
 import java.awt.Color;
 import java.lang.reflect.Array;
+
 import entity.fieldclasses.Field;
 import entity.fieldclasses.Fleet;
 import entity.fieldclasses.LaborCamp;
@@ -8,6 +9,7 @@ import entity.fieldclasses.Ownable;
 import entity.fieldclasses.Refuge;
 import entity.fieldclasses.Tax;
 import entity.fieldclasses.Territory;
+;
 public class GameBoard {
 	private static Field[] field;
 

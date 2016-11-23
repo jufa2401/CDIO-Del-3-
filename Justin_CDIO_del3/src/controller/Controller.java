@@ -1,12 +1,12 @@
 package controller;
-import gamelogic.GameLogic;
+import boundary.GUIHandler;
+import boundary.language.LanguageHandler;
+import entity.DiceCup;
+import entity.GameBoard;
 import entity.Player;
 import entity.PlayerList;
 import entity.fieldclasses.Field;
-import entity.DiceCup;
-import boundary.GUIHandler;
-import boundary.language.LanguageHandler;
-import entity.GameBoard;
+import gamelogic.GameLogic;
 
 public class Controller {
 	DiceCup dice;

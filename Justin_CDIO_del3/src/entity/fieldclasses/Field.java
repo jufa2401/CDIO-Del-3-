@@ -1,6 +1,7 @@
 package entity.fieldclasses;
-import entity.Player;
 import java.awt.Color;
+
+import entity.Player;
 
 public abstract class Field {
 	private int ID;

@@ -1,11 +1,15 @@
 package rungame;
-import controller.Controller;
-import desktop_resources.GUI;
 import boundary.GUIHandler;
 import boundary.language.LanguageHandler;
+import controller.Controller;
 import entity.GameBoard;
 import entity.PlayerList;
 public class Main {
+/* 
+ * Min main klasse starter initialiserer GameBoard,
+ * GUIHandler, sætter sprog, henter reglerne
+ * 
+ */
 	public static void main (String[]args) {
 		GameBoard game = new GameBoard();
 		GUIHandler GUIh = new GUIHandler();
