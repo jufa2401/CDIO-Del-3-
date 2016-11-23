@@ -9,6 +9,7 @@ import java.awt.Color;
  */
 import entity.Player;
 public class LaborCamp extends Ownable {
+	int rent, LaborCampsOwned;
 
 	public LaborCamp(int fieldNumber, Color color, int price) {
 		super(fieldNumber, color, price);
@@ -22,36 +23,41 @@ public class LaborCamp extends Ownable {
 	public int landOnField(Player player) {
 		int paid = 0;
 		if (this.owner != null){
-			paid = 100*player.getDiceSum();
+			LaborCampsOwned = this.owner.getFleetsOwned();
+			switch (LaborCampsOwned) {
+			case 1: rent = 100*player.getDiceSum();						break;
+			case 2: rent = LaborCampsOwned * 100*player.getDiceSum();	break;
+			default: break;
+			}
 			player.payTo(this.owner, paid);
-//		} else if (player.getBalance()>price) {
-//			super.landOnField(player);
-			//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
+			paid = rent;
 
-			//	!!!		Vi må ikke hente fra boundary klasserne ind i entitetsklasserne
-			//			Screen.println(ULang.askBuyField(player.getBalance(), price));
-			//			if (Keyboard.waitForYesNo()) {
-//			player.Transaction(-price);
-//			setOwner(player);
 		}
 		return paid;		
-
-	}
-	@Override
-	public int getPrice() {
-		return this.price;
 	}
 
 	@Override
-	public int getRent() {
-		// Kan evt. udvides til at returnere 100 gange terningkast
-		return 0;
+	public void buyField(Player player) {
+		super.buyField(player);
+		player.setLaborCampsOwned(1+player.getLaborCampsOwned());
 	}
 
-	@Override
-	public int getType() {
-		return 2;	// Labor Camp
-	}
+
+@Override
+public int getPrice() {
+	return this.price;
+}
+
+@Override
+public int getRent() {
+	// Kan evt. udvides til at returnere 100 gange terningkast
+	return 0;
+}
+
+@Override
+public int getType() {
+	return 2;	// Labor Camp
+}
 
 
 }

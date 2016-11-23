@@ -3,7 +3,9 @@ package entity;
 public class Player {
 
 	private String name;
-	private int balance, currentField, d1, d2, fleetsOwned, Identifier;
+	private int balance, currentField, d1, d2, fleetsOwned,LaborCampsOwned, Identifier;
+
+
 	private boolean hasLost;
 	private static int AvailableIdentifer = 0;
 	//Constructor:
@@ -11,6 +13,7 @@ public class Player {
 		this.name = name;
 		this.balance = balance;
 		fleetsOwned = 0;
+		LaborCampsOwned = 0;
 		hasLost = false;
 		currentField = 0;
 		Identifier = AvailableIdentifer++;
@@ -45,7 +48,12 @@ public class Player {
 	public void setFleetsOwned(int fleetsOwned) {
 		this.fleetsOwned = fleetsOwned;
 	}
-
+	public int getLaborCampsOwned() {
+		return LaborCampsOwned;
+	}
+	public void setLaborCampsOwned(int laborCampsOwned) {
+		this.LaborCampsOwned = laborCampsOwned;
+	}
 
 	/*
 	 *  Vi laver metode til at gemme terningsummen, denne metode er lavet specifikt 

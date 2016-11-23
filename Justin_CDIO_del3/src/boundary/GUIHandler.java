@@ -11,7 +11,6 @@ import entity.DiceCup;
 import entity.GameBoard;
 import entity.Player;
 
-//omgcr
 
 public class GUIHandler {
 	int length = 0;
