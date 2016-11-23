@@ -11,10 +11,6 @@ public class Die {
 	public int getValue(){
 		return FaceValue;   
 	}
-	//		public void setValue(int FaceValue) 
-	//		{
-	//			this.FaceValue = FaceValue;
-	//		}
 }
 
 

@@ -1,4 +1,4 @@
-package gamelogic;
+package controller;
 
 import boundary.GUIHandler;
 import boundary.language.LanguageHandler;

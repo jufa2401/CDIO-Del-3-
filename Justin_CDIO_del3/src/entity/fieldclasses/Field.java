@@ -26,12 +26,13 @@ public abstract class Field {
  * Defineres til at hente rent og price fra Fieldklassen. 
  * Det bliver smart når vi skal lave referencer i vores GUI-array
  * Alle underklasserne har denne metode med, selvom de ikke bruger dem
- * De vil returnere med 0, hvis de ikke skal bruge dem
+ * De vil returnere med 0, hvis de ikke skal bruge dem.
+ * Definerer type til at genkende felternes type fra hinanden.
  */
-	
 	public abstract int getRent();
 	public abstract int getPrice();
 	public abstract int getType();
+	
 
 	public abstract int landOnField(Player player);
 }

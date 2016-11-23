@@ -27,7 +27,7 @@ public class GameBoard {
 		field[4] = new Territory(5, Color.RED, 2000, 500);
 		field[5] = new Territory(6, Color.RED, 3000, 700);
 		field[6] = new LaborCamp(7, Color.GREEN, 2500);
-//		Tax parametre: id, feltfarve, fast skattebeløv, skatte pct.
+//		Tax parametre: id, feltfarve, fast skattebeløb, skatte pct.
 		field[7] = new Tax(8, Color.YELLOW, 2000, 0);
 		field[8] = new Territory(9, Color.RED, 4000, 1000);
 		field[9] = new Territory(10, Color.RED, 4300, 1300);
@@ -72,12 +72,13 @@ public class GameBoard {
 		return i;
 	}
 
+//	Metode til at fjerne ejerskab af ejendomme, når spiller dør
 	public boolean removeFieldOwner(int n, Player player) {
 		boolean freed = false;
 		if (field[n].getPrice() > 0) {	// hvis feltet kan ejes
 			Ownable ofield = (Ownable) field[n]; 
 			Player owner = ofield.getOwner();
-			if (owner == player) {	// Kan man det, eller sammenlign navne?
+			if (owner == player) {	
 				ofield.setOwner(null);
 				freed = true;
 			}

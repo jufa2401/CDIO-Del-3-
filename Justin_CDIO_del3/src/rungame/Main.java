@@ -27,7 +27,7 @@ public class Main {
 				name = GUIh.getString(language.askForPlayerName());
 			} while (playerList.isNameUsed(i,name));
 			playerList.addPlayer(i, name);
-			GUIh.addPlayer(playerList.getPlayer(i));
+			GUIh.addPlayer(playerList.getPlayer(i).getName(), playerList.getPlayer(i).getBalance());
 		}
 		Controller GameController = new Controller(GUIh, language, game, playerList);
 		GameController.launchGame();

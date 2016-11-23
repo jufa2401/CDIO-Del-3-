@@ -6,7 +6,6 @@ import entity.GameBoard;
 import entity.Player;
 import entity.PlayerList;
 import entity.fieldclasses.Field;
-import gamelogic.GameLogic;
 
 public class Controller {
 	DiceCup dice;
@@ -41,7 +40,8 @@ public class Controller {
 	public void gameTurn(Player player) {
 		GUIh.getButtonPressed(language.GetOkMove(player.getName()), language.Ok());
 		dice.rollDiceCup();
-		GUIh.showDice(dice);
+		int[] d = dice.getDiceValue();
+		GUIh.showDice(d[0], d[1]);
 		GUIh.removeCar(player.getCurrentField(), player.getName());
 		player.SaveDiceRoll(dice);
 		int fieldNumber = player.moveToField(dice.getDiceSum(), game);

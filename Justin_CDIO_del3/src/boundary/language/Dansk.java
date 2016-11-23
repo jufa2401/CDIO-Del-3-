@@ -1,11 +1,9 @@
 package boundary.language;
 
-import entity.GameBoard;
-
 public class Dansk implements LanguageDefinitions {
 
 	@Override
-	public String getFieldName(int id, GameBoard gb) {
+	public String getFieldName(int id) {
 		String names[] = {
 				//			Disse rettes senere til dansk
 				"Stamme Lejr",
@@ -34,9 +32,8 @@ public class Dansk implements LanguageDefinitions {
 	}
 	@Override
 //	TODO: udskriv ting fra entiterne med lavere kobling
-	public String getFieldRent(int id, GameBoard gb) {
+	public String getFieldRent(int rent) {
 		String s;
-		int rent = gb.getFieldRent(id);
 		if (rent > 0) {
 			s = "Lejen er:" + rent;
 		} else {
@@ -47,9 +44,8 @@ public class Dansk implements LanguageDefinitions {
 	}
 
 	@Override
-	public String getFieldPrice(int id, GameBoard gb) {
+	public String getFieldPrice(int price) {
 		String s;
-		int price = gb.getFieldPrice(id);
 		if (price > 0) {
 			s = "Pris " + price;
 		} else {
@@ -75,9 +71,8 @@ public class Dansk implements LanguageDefinitions {
 		return "Vil du købe dette felt?";
 	}
 	@Override
-	public String getFieldDescription(int id, GameBoard gb) {
+	public String getFieldDescription(int type) {
 		String s;
-		int type =  gb.getFieldType(id);
 		switch (type) {
 		case 1: 	s = "Flåde";		break;
 		case 2: 	s = "Arbejdslejr";	break;

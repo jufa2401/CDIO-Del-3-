@@ -1,12 +1,10 @@
 package boundary.language;
 
-import entity.GameBoard;
-
 public class LanguageHandler {
 
 	private static LanguageDefinitions selectedLanguage;
-	public String getFieldDescription(int id, GameBoard gb) {
-		return selectedLanguage.getFieldDescription(id, gb);
+	public String getFieldDescription(int type) {
+		return selectedLanguage.getFieldDescription(type);
 	}
 	
 
@@ -30,16 +28,16 @@ public class LanguageHandler {
 		return selectedLanguage.notifyLangChange();
 	}
 
-	public String getFieldName(int id, GameBoard gb) {
-		return selectedLanguage.getFieldName(id, gb);
+	public String getFieldName(int id) {
+		return selectedLanguage.getFieldName(id);
 	}
 
-	public String getFieldPrice(int id, GameBoard gb) {
-		return selectedLanguage.getFieldPrice(id, gb);
+	public String getFieldPrice(int price) {
+		return selectedLanguage.getFieldPrice(price);
 	}
 	
-	public String getFieldRent(int id, GameBoard gb) {
-		return selectedLanguage.getFieldRent(id, gb);
+	public String getFieldRent(int rent) {
+		return selectedLanguage.getFieldRent(rent);
 	}
 
 	public String AskHowManyPlayers() {

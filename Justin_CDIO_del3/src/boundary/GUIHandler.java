@@ -7,13 +7,16 @@ import desktop_codebehind.Car.Builder;
 import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
-import entity.DiceCup;
+/*
+ * Det er forsøgt at begrænse koblingen mellem boundary og entities,
+ * men har endt med at beholde GameBoard, da for mig resulterede i 
+ * meget simplere kode. 
+ */
 import entity.GameBoard;
-import entity.Player;
-
 
 public class GUIHandler {
 	int length = 0;
+	static int pid = 0;
 	/*	
 	 * I stedet for at inddele vores felter i de forskellige builder felter,
 	 * har jeg valgt at lave et array some deler alle felterne ind i 2 grupper
@@ -28,29 +31,29 @@ public class GUIHandler {
 		Field[] fields = new Field[length];
 		for (id = 0; id < length; id++) {
 			int price = gb.getFieldPrice(id);
+			int type  =  gb.getFieldType(id);
 			//hvis feltet er ownable erklærer vi en 'street'
 			if (price > 0) {
+				int rent  = gb.getFieldRent(id);
 				fields[id] = new Street.Builder()
-						.setTitle(language.getFieldName(id, gb))
-						.setSubText(language.getFieldPrice(id, gb))
-						.setDescription(language.getFieldDescription(id, gb))
+						.setTitle(language.getFieldName(id))
+						.setSubText(language.getFieldPrice(price))
+						.setDescription(language.getFieldDescription(type))
 						.setBgColor(gb.getFieldColor(id))
-						.setRent(language.getFieldRent(id, gb))
+						.setRent(language.getFieldRent(rent))
 						.build();
 			} else {
 				fields[id] = new Street.Builder()
-						.setTitle(language.getFieldName(id, gb))
-						.setSubText(language.getFieldPrice(id, gb))
-						.setDescription(language.getFieldDescription(id, gb))
+						.setTitle(language.getFieldName(id))
+						.setSubText(language.getFieldPrice(price))
+						.setDescription(language.getFieldDescription(type))
 						.setBgColor(gb.getFieldColor(id))
 						.build();
-				
-
 			}
 		}
 		GUI.create(fields);
-//		GUI.setDice(1, 1);
 	}
+	
 	public int getInteger(String message, int min, int max) {
 		return GUI.getUserInteger(message, min, max);
 	}
@@ -58,9 +61,10 @@ public class GUIHandler {
 	public String getString(String message) {
 		return GUI.getUserString(message);
 	}
-	public void addPlayer(Player player) {
+	
+	public void addPlayer(String player, int balance) {
 		Builder carBuilder = new Car.Builder();
-		switch (player.getPlayerID()){
+		switch (pid) {
 		case 0:
 			carBuilder
 			.typeRacecar()
@@ -107,17 +111,17 @@ public class GUIHandler {
 			break;
 		}
 		Car car = carBuilder.build();
-		GUI.addPlayer(player.getName(), player.getBalance(), car);
-		GUI.setCar(player.getCurrentField()+1, player.getName()); //+1
+		GUI.addPlayer(player, balance, car);
+		GUI.setCar(1, player); //+1
+		pid++;
 	}
 
 	public void setCar(int currentField, String name) {
 		GUI.setCar(currentField+1, name);						//+1
 	}
 
-	public void showDice(DiceCup dice) {
-		int[] d = dice.getDiceValue();
-		GUI.setDice(d[0], d[1]);
+	public void showDice(int d1, int d2) {
+		GUI.setDice(d1, d2);
 	}
 	public void removeCar(int currentField, String name) {
 		GUI.removeCar(currentField+1, name);					//+1

@@ -10,6 +10,8 @@ import entity.Player;
  * Prisen er den mindste af enten
  * den faste betalingssum, eller skatteprocenten.
  */
+
+//TODO: Meddelelse om skat betalt
 public class Tax extends Field{
 	private int taxAmount, taxRate;	
 	public Tax(int fieldNumber, Color color, int taxAmount, int taxRate) {
@@ -51,5 +53,4 @@ public class Tax extends Field{
 	public int getType() {
 		return 4;	// Tax
 	}
-
 }

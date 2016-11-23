@@ -40,21 +40,19 @@ public class LaborCamp extends Ownable {
 	}
 
 
-@Override
-public int getPrice() {
-	return this.price;
-}
+	@Override
+	public int getPrice() {
+		return this.price;
+	}
 
-@Override
-public int getRent() {
-	// Kan evt. udvides til at returnere 100 gange terningkast
-	return 0;
-}
+	@Override
+	public int getRent() {
+		// Kan evt. udvides til at returnere 100 gange terningkast
+		return 0;
+	}
 
-@Override
-public int getType() {
-	return 2;	// Labor Camp
-}
-
-
+	@Override
+	public int getType() {
+		return 2;	// Labor Camp
+	}
 }

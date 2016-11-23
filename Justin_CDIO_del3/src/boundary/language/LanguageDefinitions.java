@@ -1,17 +1,14 @@
   package boundary.language;
 
-  	import entity.GameBoard;
-
 	public interface LanguageDefinitions {
+	
+	public String getFieldName(int id);
+	
+	public String getFieldRent(int rent);
+	
+	public String getFieldPrice(int price);
 
-	
-	public String getFieldName(int id, GameBoard gb);
-	
-	public String getFieldRent(int id, GameBoard gb);
-	
-	public String getFieldPrice(int id, GameBoard gb);
-
-	public String getFieldDescription(int id, GameBoard gb);
+	public String getFieldDescription(int type);
 
 	public String notifyLangChange();
 
