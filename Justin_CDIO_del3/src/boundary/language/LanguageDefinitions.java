@@ -33,4 +33,6 @@
 
 	public String playerPayTo(String payer, String recipient, int paid);
 	
+	public String gameRules();
+	
 }

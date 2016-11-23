@@ -37,6 +37,8 @@ public class PlayerList {
 		boolean isUsed = false;
 		for (int i = 0; i < numberOfDefinedPlayers; i++) {
 			if (players[i].getName().equalsIgnoreCase(name)){
+				//TODO Der skal komme en besked til brugeren om at navnet er i brug og samme navn ikke kan benyttes igen.
+				// ALternativt kunne man overskrive navnet ved at tilføje et tal til den første bruger af navnet og hvis flere med sammme navn tilføjes får de nummering derefter.
 				isUsed = true;	
 			}
 		}

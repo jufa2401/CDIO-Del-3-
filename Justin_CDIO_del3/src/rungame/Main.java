@@ -1,5 +1,6 @@
 package rungame;
 import controller.Controller;
+import desktop_resources.GUI;
 import boundary.GUIHandler;
 import boundary.language.LanguageHandler;
 import entity.GameBoard;
@@ -12,6 +13,7 @@ public class Main {
 		LanguageHandler language = new LanguageHandler("Dansk");
 		//		PlayerList playerList = new PlayerList();
 		GUIh.createGameBoard(game, language);
+		GUIh.getGameRules(language.gameRules());
 		int playerCount = GUIh.getInteger(language.AskHowManyPlayers(), 2, 6);
 		PlayerList playerList = new PlayerList(playerCount);
 		for (int i = 0; i < playerCount; i++)

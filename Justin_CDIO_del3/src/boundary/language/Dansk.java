@@ -113,4 +113,12 @@ public class Dansk implements LanguageDefinitions {
 	public String playerPayTo(String payer, String recipient, int paid) {
 		return "Spiller '" + payer + "' betaler "+ paid + " til '" + recipient + "'.";
 	}
+	@Override
+	public String gameRules() {
+		return "\t Dette spil kan spilles af 2-6 spillere. \n"
+				+ "\t Spillet tabes ved at gå bankerot, den sidste spiller med likvide midler vinder spillet. \n"
+				+ "\t Alle spillere starter med en balance på 30.000. \n"
+				+ "\t Visse felter kan købes, andre kan medføre en betaling. \n"
+				+ "\t Hvis en spiller lander på et ejet felt, betales en sum til ejeren. \n " ;
+	}
 }

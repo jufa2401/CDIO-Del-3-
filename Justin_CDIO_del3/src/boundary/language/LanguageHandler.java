@@ -83,4 +83,9 @@ public class LanguageHandler {
 	public String playerPayTo(String payer, String recipient, int paid) {
 		return selectedLanguage.playerPayTo(payer, recipient, paid);
 	}
+	
+	public String gameRules(){
+		return selectedLanguage.gameRules();
+	}
+
 }

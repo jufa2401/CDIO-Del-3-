@@ -143,8 +143,11 @@ public class GUIHandler {
 	public void getButtonPressed(String getOkMove, String ok) {
 		GUI.getUserButtonPressed(getOkMove, ok);
 	}
+	public void getGameRules(String gameRules) {
+		GUI.showMessage(gameRules);
+	}
+
 	
-		
 }
 
 
