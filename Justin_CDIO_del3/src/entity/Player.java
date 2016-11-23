@@ -4,8 +4,6 @@ public class Player {
 
 	private String name;
 	private int balance, currentField, d1, d2, fleetsOwned,LaborCampsOwned, Identifier;
-
-
 	private boolean hasLost;
 	private static int AvailableIdentifer = 0;
 	//Constructor:
@@ -27,11 +25,11 @@ public class Player {
 	public void setName(String name) {
 		this.name = name;
 	}
-//	 metode der tjekker om en spiller har tabt
+	//	 metode der tjekker om en spiller har tabt
 	public boolean hasLost() {
 		if (balance <= 0) {
 			hasLost = true;
-		//TODO: afgiv ejendomme?
+			//TODO: afgiv ejendomme?
 		}
 		return hasLost;
 	}
@@ -81,7 +79,7 @@ public class Player {
 		}
 		return balance;
 	}	
-	
+
 	//	Giver muligheden for at betale til andre spillere, afslutter med at returnere den ændrede balance
 	//  Hvis en spiller lander på sit eget felt, trækker man i princippet fra sin egen konto, men de bliver tilført igen med det samme.
 	public int payTo (Player recipient, int amount) {
@@ -89,12 +87,12 @@ public class Player {
 		Transaction(-amount);
 		return balance;
 	}
-	
+
 	//	Getters and setters for fieldnumber
 	public int getCurrentField() {
 		return currentField;
 	}
-//	Når vi rykker os udover arraylængden roller vi, og trækker arraylængden fra.
+	//	Når vi rykker os udover arraylængden roller vi, og trækker arraylængden fra.
 	public int moveToField(int roll, GameBoard gb) {
 		int length = gb.getNumberOfFields();
 		this.currentField += roll;
@@ -102,7 +100,7 @@ public class Player {
 			this.currentField -= length;
 		return this.currentField;
 	}
-	
+
 	public int getPlayerID() {
 		return this.Identifier;
 	}

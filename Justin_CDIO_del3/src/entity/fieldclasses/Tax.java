@@ -34,7 +34,6 @@ public class Tax extends Field{
 			}
 		}
 		player.Transaction(-payment);
-		//		Tilføj output om skattebetaling og ændret balance
 		return payment;
 	}
 

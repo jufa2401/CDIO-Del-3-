@@ -5,7 +5,8 @@ import java.awt.Color;
  * som kan betales for ejerskab.
  * Hvis man lander på en LaborCamp som er ejet,
  * skal man betale en variabel leje til ejeren.
- * Lejen er bestemt efter terningøjesummen.
+ * Lejen er bestemt efter terningøjesummen,
+ * og antal af LaborCamps udlejeren ejer.
  */
 import entity.Player;
 public class LaborCamp extends Ownable {
@@ -13,10 +14,6 @@ public class LaborCamp extends Ownable {
 
 	public LaborCamp(int fieldNumber, Color color, int price) {
 		super(fieldNumber, color, price);
-		/*
-		 * Vi vil gerne hente terningsummen
-		 * fra vores dicecup klasse
-		 */
 	}
 
 	@Override

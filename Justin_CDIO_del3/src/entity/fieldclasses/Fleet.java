@@ -31,17 +31,7 @@ public class Fleet extends Ownable {
 			}
 			player.payTo(this.owner, rent);
 			paid = rent;
-//		} else if (player.getBalance()>price) {
-//			super.landOnField(player);
-			//			Her skal vi udvide så spilleren har et valgt, så han ikke bare køber automatisk
 
-			//	!!!		Vi må ikke hente fra boundary klasserne ind i entitetsklasserne
-			//			Screen.println(ULang.askBuyField(player.getBalance(), price));
-			//			if (Keyboard.waitForYesNo()) {
-//			player.Transaction(-price);
-			//			Når man køber en fleet, tæller vi 1 op i vores FleetsOwned metode i player
-//			setOwner(player);
-//			player.setFleetsOwned(1+player.getFleetsOwned());
 		}
 		return paid;		
 

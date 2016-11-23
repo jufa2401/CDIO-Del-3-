@@ -5,7 +5,7 @@ public class PlayerList {
 	private int playerCount;
 	private Player[] players;
 
-
+// For hver spiller der kommer ind i spillet, tæller vi 1 op i players arrayet
 	public PlayerList (int playerCount) {
 		this.players = new Player[playerCount];
 		for (int c = 0; c < playerCount; c++)
@@ -13,14 +13,12 @@ public class PlayerList {
 		this.playerCount = playerCount;
 	}
 
-
+// Vi tildeler spillerne ID, og tilføjer spillerne med  parametrene navn og balance
 	public void addPlayer(int ID, String name) {
 		players[ID] = new Player(name, 30000);
 
 	}
 	
-
-
 	public Player getPlayer(int ID) {
 		
 		return players[ID];
@@ -45,7 +43,7 @@ public class PlayerList {
 		return isUsed;
 	}
 
-
+// Checker for vinder, ved at tælle tabere
 	public boolean isWinner() {
 		int n = 0;
 		for (int c = 0; c < playerCount; c++) {
