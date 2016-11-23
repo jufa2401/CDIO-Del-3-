@@ -25,9 +25,8 @@ public class Tax extends Field{
 		int payment;
 		if (taxRate <= 0) {
 			payment = taxAmount;
-		} else { 
+		} else {	 				//else delen af denne kode er fra en tidligere version
 			int balance = player.getBalance();
-
 			//			Vi beregner assets som resterende penge på kontoen, det kunne have inkluderet værdien af ejendomme
 			//			Dette kan evt. implementeres senere
 			payment = taxRate*balance/100;

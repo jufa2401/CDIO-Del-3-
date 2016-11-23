@@ -42,7 +42,7 @@ public class GameLogic{
 				if (GUIh.getYesNo(language.askPayTax(), tax[0]+"", tax[1]+"%")) {
 					paid = tax[0];
 				} else {
-					paid = tax[1];
+					paid = tax[1]*player.getBalance()/100;
 				}
 				player.Transaction(-paid);
 			} else {
