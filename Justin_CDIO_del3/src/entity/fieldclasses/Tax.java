@@ -30,7 +30,7 @@ public class Tax extends Field{
 
 			//			Vi beregner assets som resterende penge på kontoen, det kunne have inkluderet værdien af ejendomme
 			//			Dette kan evt. implementeres senere
-			payment = taxRate* balance/100;
+			payment = taxRate*balance/100;
 			if (taxAmount < payment) {
 				payment = taxAmount;
 			}
@@ -53,4 +53,14 @@ public class Tax extends Field{
 	public int getType() {
 		return 4;	// Tax
 	}
+	
+	@Override
+	public int[] getTax(int balance) {
+		int[] tax = {0,0};
+		tax[0] = taxAmount;
+		tax[1] = taxRate;
+		//tax[1] = taxRate*balance/100;
+		return tax;
+	}
+
 }

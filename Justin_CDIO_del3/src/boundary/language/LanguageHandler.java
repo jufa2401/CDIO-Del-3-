@@ -86,4 +86,19 @@ public class LanguageHandler {
 		return selectedLanguage.gameRules();
 	}
 
+
+	public String playerTax(String name, int paid) {
+		return selectedLanguage.playerTax(name, paid);
+	}
+
+
+	public String playerBonus(String name, int bonus) {
+		return selectedLanguage.playerBonus(name, bonus);
+	}
+
+
+	public String askPayTax() {
+		return selectedLanguage.askPayTax();
+	}
+
 }

@@ -35,6 +35,11 @@ public abstract class Field {
 	
 
 	public abstract int landOnField(Player player);
+
+	public int[] getTax(int balance) {
+		int[] tax = {0,0}; 
+		return tax;
+	}
 }
 
 

@@ -16,7 +16,7 @@ public class GameLogic{
 				// Der er en ejer af feltet
 				int paid = ofield.landOnField(player);
 
-				//TODO: giv besked om betalt leje
+				// Giv besked om betalt leje
 				GUIh.getButtonPressed(language.playerPayTo(player.getName(), ofield.getOwner().getName(), paid), language.Ok());
 				GUIh.setBalance(ofield.getOwner().getName(), ofield.getOwner().getBalance());
 			} else {
@@ -29,8 +29,33 @@ public class GameLogic{
 			}
 		} else {
 			//			hvis feltet ikke kan ejes
-			field.landOnField(player);
-			//TODO: giv besked om betalt skat/givet bonus
+			int[] tax = field.getTax(player.getBalance());
+			int paid;
+			if (tax[0] > 0 && tax[1] > 0) {
+				/*
+				 * Vidste ikke om vi skulle beregne skattefratrækkelsen
+				 * for spilleren, eller bare skrive skatteraten,
+				 * vi har derfor valgt at give kunden begge muligheder
+				 * (se nedenstående udkommenterede kode)
+				 */
+//				if (GUIh.getYesNo(language.askPayTax(), ""+tax[0], ""+tax[1])) {
+				if (GUIh.getYesNo(language.askPayTax(), tax[0]+"", tax[1]+"%")) {
+					paid = tax[0];
+				} else {
+					paid = tax[1];
+				}
+				player.Transaction(-paid);
+			} else {
+				paid = field.landOnField(player);
+			}
+			String TaxOrBonus;
+			if (paid > 0) {
+				TaxOrBonus = language.playerTax(player.getName(), paid);
+			} else {
+				TaxOrBonus = language.playerBonus(player.getName(), -paid);
+			}
+			// Giv besked om betalt skat/givet bonus
+			GUIh.getButtonPressed(TaxOrBonus, language.Ok());
 		}
 		GUIh.setBalance(player.getName(), player.getBalance());
 

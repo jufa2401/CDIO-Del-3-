@@ -116,4 +116,16 @@ public class Dansk implements LanguageDefinitions {
 				+ "\t Visse felter kan købes, andre kan medføre en betaling. \n"
 				+ "\t Hvis en spiller lander på et ejet felt, betales en sum til ejeren. \n " ;
 	}
+	@Override
+	public String playerTax(String name, int paid) {
+		return "Spiller '" + name + "' betaler "+ paid + " i skat.";
+	}
+	@Override
+	public String playerBonus(String name, int bonus) {
+		return "Spiller '" + name + "' modtager "+ bonus+ " i bonus.";
+	}
+	@Override
+	public String askPayTax() {
+		return "Hvilket beløb skal der betales i skat?";
+	}
 }

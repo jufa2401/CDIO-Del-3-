@@ -31,5 +31,11 @@
 	public String playerPayTo(String payer, String recipient, int paid);
 	
 	public String gameRules();
+
+	public String playerTax(String name, int paid);
+
+	public String playerBonus(String name, int bonus);
+
+	public String askPayTax();
 	
 }
