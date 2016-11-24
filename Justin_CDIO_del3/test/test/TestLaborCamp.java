@@ -62,28 +62,35 @@ public class TestLaborCamp {
 		//Tester om når der er én ejer af af laborcampen og en anden spiller lander derpå om balancen bliver påvirket korrekt.
 		d12.rollDiceCup();
 		this.player.SaveDiceRoll(d12);
-		ejer.setLaborCampsOwned(2);
+		ejer.setLaborCampsOwned(1);
 		this.feltlabor.setOwner(ejer);
-		this.feltlabor.buyField(ejer);
 		this.feltlabor.landOnField(this.player);
 		
 		expected = 10000 - (100 * d12.getDiceSum());
 		actual = this.player.getBalance();
 		
 		Assert.assertTrue(this.feltlabor.getOwner() == ejer);
-		Assert.assertEquals(expected, actual); // fejler da player.payTo aldrig bliver evalueret i if loopet.
-		
-		
-	}
+		Assert.assertEquals(expected, actual);
+		}
 
-//	@Test
-//	public void testBuyField() {
-//		fail("Not yet implemented"); // TODO
-//	}
-//
-//	@Test
-//	public void testLaborCamp() {
-//		fail("Not yet implemented"); // TODO
-//	}
+	@Test
+	public void testLandOnField2() {
+		int expected = 10000;
+		int actual = this.player.getBalance();
+		Assert.assertEquals(expected, actual);
+		
+		//Tester om når der er én ejer af af laborcampen og en anden spiller lander derpå om balancen bliver påvirket korrekt.
+		d12.rollDiceCup();
+		this.player.SaveDiceRoll(d12);
+		ejer.setLaborCampsOwned(2);
+		this.feltlabor.setOwner(ejer);
+		this.feltlabor.landOnField(this.player);
+		
+		expected = 10000 - (100 * d12.getDiceSum() * 2);
+		actual = this.player.getBalance();
+		
+		Assert.assertTrue(this.feltlabor.getOwner() == ejer);
+		Assert.assertEquals(expected, actual);
+		}
 
 }

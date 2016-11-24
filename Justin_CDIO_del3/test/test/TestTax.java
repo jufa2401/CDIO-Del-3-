@@ -64,19 +64,4 @@ public class TestTax {
 		actual = player.getBalance();
 		Assert.assertEquals(expected, actual);
 	}
-
-//	@Test
-//	public final void testGetTax() {
-//		int expected = 10000;
-//		int actual = this.player.getBalance();
-//		Assert.assertEquals(expected, actual);
-//		
-//		//Tester om arrayet som bliver brugt til at vælge enten at betale 4000, eller 10% af en spillers samlet balance.
-//		taxfield.getTax(this.player.getBalance());
-//		
-//		expected = 10000 - 4000;
-//		actual = this.player.getBalance();
-//		Assert.assertEquals(expected, actual);
-//	}
-
 }

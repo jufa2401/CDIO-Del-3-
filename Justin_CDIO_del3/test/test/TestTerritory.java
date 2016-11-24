@@ -114,7 +114,7 @@ public class TestTerritory {
 		Assert.assertEquals(expected, actual);
 		
 		//tester om ejeren af feltet er blevet trukkt penge.
-		expected = 4500;
+		expected = 5000 - 500;
 		actual = ejer.getBalance();
 		Assert.assertEquals(expected, actual);	
 	}
