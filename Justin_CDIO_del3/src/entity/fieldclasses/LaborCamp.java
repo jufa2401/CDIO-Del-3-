@@ -20,7 +20,7 @@ public class LaborCamp extends Ownable {
 	public int landOnField(Player player) {
 		int rent = 0;
 		if (this.owner != null){
-			LaborCampsOwned = this.owner.getLaborCampsOwned(); // was this.owner.getFleetsOwned();
+			LaborCampsOwned = this.owner.getLaborCampsOwned(); 
 			rent = LaborCampsOwned * 100*player.getDiceSum();			
 			}
 		player.payTo(this.owner, rent); 
