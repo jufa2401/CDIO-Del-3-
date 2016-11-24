@@ -121,8 +121,8 @@ public class TestFleet {
 		this.fleet.buyField(this.player);
 		
 		Assert.assertTrue(this.player.getFleetsOwned() == 1);
-		
-	}
+		}
+	
 
 //	@Test
 //	public final void testFleet() {
