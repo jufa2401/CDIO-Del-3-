@@ -9,7 +9,7 @@ import desktop_fields.Street;
 import desktop_resources.GUI;
 /*
  * Det er forsøgt at begrænse koblingen mellem boundary og entities,
- * men har endt med at beholde GameBoard, da for mig resulterede i 
+ * men har endt med at beholde GameBoard, da  det for mig resulterede i 
  * meget simplere kode. 
  */
 import entity.GameBoard;
@@ -22,7 +22,7 @@ public class GUIHandler {
 	 * har jeg valgt at lave et array some deler alle felterne ind i 2 grupper
 	 * Ownable og ikke-ownable
 	 * for at man kan kende forskel på felttyperne har jeg så inddelt mine 
-	 * felte ind i forskelligt farvede objekter.
+	 * felte ind i forskelligt farvede objekter, som er hentet fra GameBoards array.
 	 * 
 	 */
 	public void createGameBoard(GameBoard gb, LanguageHandler language) {

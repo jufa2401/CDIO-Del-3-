@@ -85,7 +85,6 @@ public class GameBoard {
 		}
 		return freed;
 	}
-
 }
 
 

@@ -5,7 +5,6 @@ public class Dansk implements LanguageDefinitions {
 	@Override
 	public String getFieldName(int id) {
 		String names[] = {
-				//			Disse rettes senere til dansk
 				"Stamme Lejr",
 				"Krater",
 				"Befæstede by",
@@ -31,7 +30,6 @@ public class Dansk implements LanguageDefinitions {
 		return names[id];
 	}
 	@Override
-//	TODO: udskriv ting fra entiterne med lavere kobling
 	public String getFieldRent(int rent) {
 		String s;
 		if (rent > 0) {

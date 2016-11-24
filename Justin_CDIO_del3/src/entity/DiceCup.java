@@ -28,5 +28,4 @@ public class DiceCup {
 	public int getDiceSum()	{
 		return d1.getValue() + d2.getValue();
 	}	
-
 }
