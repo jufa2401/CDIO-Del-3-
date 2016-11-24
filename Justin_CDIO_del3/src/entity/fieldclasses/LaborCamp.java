@@ -18,21 +18,15 @@ public class LaborCamp extends Ownable {
 
 	@Override
 	public int landOnField(Player player) {
-		int paid= 0;
+		int rent = 0;
 		if (this.owner != null){
 			LaborCampsOwned = this.owner.getLaborCampsOwned(); // was this.owner.getFleetsOwned();
-			switch (LaborCampsOwned) {
-			case 1: rent = 100*player.getDiceSum();						break;
-			case 2: rent = LaborCampsOwned * 100*player.getDiceSum();	break;
-			default: break;
+			rent = LaborCampsOwned * 100*player.getDiceSum();			
 			}
-			
-			player.payTo(this.owner, paid); 
-			paid = rent;
-
-		}
-		return paid;		
+		player.payTo(this.owner, rent); 
+		return rent;		
 	}
+	
 
 	@Override
 	public void buyField(Player player) {

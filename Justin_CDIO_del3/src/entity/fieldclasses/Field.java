@@ -9,7 +9,6 @@ public abstract class Field {
 
 	// Constructor der skaber felter 
 	public Field(int fieldIdentifier, Color color) {
-		super(); 
 		this.ID = fieldIdentifier;
 		this.color = color;
 	}
@@ -17,7 +16,6 @@ public abstract class Field {
 		int[] tax = {0,0}; 
 		return tax;
 	}
-
 
 
 	public int getID() {

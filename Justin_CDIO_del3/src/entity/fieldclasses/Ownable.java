@@ -11,7 +11,7 @@ import entity.Player;
  * for de felter der kan ejes.
  */
 public abstract class Ownable extends Field {
-	int price;
+	protected int price;
 	Player owner;
 
 	public Ownable(int fieldNumber, Color color, int price) {
