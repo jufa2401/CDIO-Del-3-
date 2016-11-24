@@ -29,33 +29,29 @@ public class GameLogic{
 			}
 		} else {
 			//			hvis feltet ikke kan ejes
-			int[] tax = field.getTax(player.getBalance());
+			int taxAmount = field.getTaxAmount();
+			int taxRate   = field.getTaxRate();
 			int paid;
-			if (tax[0] > 0 && tax[1] > 0) {
-				/*
-				 * Vidste ikke om vi skulle beregne skattefratrækkelsen
-				 * for spilleren, eller bare skrive skatteraten,
-				 * vi har derfor valgt at give kunden begge muligheder
-				 * (se nedenstående udkommenterede kode)
-				 */
-//				if (GUIh.getYesNo(language.askPayTax(), ""+tax[0], ""+tax[1])) {
-				if (GUIh.getYesNo(language.askPayTax(), tax[0]+"", tax[1]+"%")) {
-					paid = tax[0];
+			// Tax-felt med valg af beløb håndteres specielt, spilleren spørges
+			if (taxAmount > 0 && taxRate > 0) {
+				//			Teksten på knapperne er ikke tekst, men tal og behøver derfor ikke oversættes
+				if (GUIh.getYesNo(language.askPayTax(), taxAmount+"", taxRate+"%")) {
+					// Fast beløb valgt
+					paid = field.landOnField(player);
 				} else {
-					paid = tax[1]*player.getBalance()/100;
+					// Rate valgt, beløb afhængig af saldobalance
+					paid = field.landOnField(player, taxRate);
 				}
-				player.Transaction(-paid);
 			} else {
+			// Normal fast Tax / bonus, betales uden der spørges
 				paid = field.landOnField(player);
 			}
-			String TaxOrBonus;
+			// Der gives forskellig besked afhængig af om der betales skat, eller udbetales bonus
 			if (paid > 0) {
-				TaxOrBonus = language.playerTax(player.getName(), paid);
+				GUIh.getButtonPressed(language.playerTax(player.getName(), paid), language.Ok());
 			} else {
-				TaxOrBonus = language.playerBonus(player.getName(), -paid);
+				GUIh.getButtonPressed(language.playerBonus(player.getName(), -paid), language.Ok());
 			}
-			// Giv besked om betalt skat/givet bonus
-			GUIh.getButtonPressed(TaxOrBonus, language.Ok());
 		}
 		GUIh.setBalance(player.getName(), player.getBalance());
 

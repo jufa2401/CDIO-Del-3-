@@ -28,8 +28,8 @@ public class LanguageHandler {
 		return selectedLanguage.notifyLangChange();
 	}
 
-	public String getFieldName(int id) {
-		return selectedLanguage.getFieldName(id);
+	public String getFieldName(int index) {
+		return selectedLanguage.getFieldName(index);
 	}
 
 	public String getFieldPrice(int price) {

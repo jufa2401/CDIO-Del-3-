@@ -8,8 +8,8 @@ public abstract class Field {
 	private Color color;
 
 	// Constructor der skaber felter 
-	public Field(int fieldIdentifier, Color color) {
-		this.ID = fieldIdentifier;
+	public Field(int fieldNumber, Color color) {
+		this.ID = fieldNumber;
 		this.color = color;
 	}
 	public int[] getTax(int balance) {
@@ -39,7 +39,17 @@ public abstract class Field {
 
 
 	public abstract int landOnField(Player player);
-
+	public int landOnField(Player player, int taxRate) {
+		return 0;
+	}
+	
+	public int getTaxAmount() {
+		return 0;
+	}
+	
+	public int getTaxRate() {
+		return 0;
+	}
 
 }
 

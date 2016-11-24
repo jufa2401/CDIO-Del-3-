@@ -26,20 +26,20 @@ public class GUIHandler {
 	 * 
 	 */
 	public void createGameBoard(GameBoard gb, LanguageHandler language) {
-		int id;
 		length = gb.getNumberOfFields();
 		Field[] fields = new Field[length];
-		for (id = 0; id < length; id++) {
-			int price = gb.getFieldPrice(id);
-			int type  =  gb.getFieldType(id);
+		for (int index = 0; index < length; index++) {
+			int price = gb.getFieldPrice(index);
+			int type  = gb.getFieldType(index);
+			int id    = gb.getField(index).getID();
 			//hvis feltet er ownable erklærer vi en 'street'
 			if (price > 0) {
-				int rent  = gb.getFieldRent(id);
+				int rent  = gb.getFieldRent(index);
 				fields[id] = new Street.Builder()
 						.setTitle(language.getFieldName(id))
 						.setSubText(language.getFieldPrice(price))
 						.setDescription(language.getFieldDescription(type))
-						.setBgColor(gb.getFieldColor(id))
+						.setBgColor(gb.getFieldColor(index))
 						.setRent(language.getFieldRent(rent))
 						.build();
 			} else {
@@ -47,7 +47,7 @@ public class GUIHandler {
 						.setTitle(language.getFieldName(id))
 						.setSubText(language.getFieldPrice(price))
 						.setDescription(language.getFieldDescription(type))
-						.setBgColor(gb.getFieldColor(id))
+						.setBgColor(gb.getFieldColor(index))
 						.build();
 			}
 		}

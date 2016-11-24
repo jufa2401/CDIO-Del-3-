@@ -2,7 +2,7 @@
 
 	public interface LanguageDefinitions {
 	
-	public String getFieldName(int id);
+	public String getFieldName(int index);
 	
 	public String getFieldRent(int rent);
 	

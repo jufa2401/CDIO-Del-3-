@@ -3,7 +3,7 @@ package boundary.language;
 public class Dansk implements LanguageDefinitions {
 
 	@Override
-	public String getFieldName(int id) {
+	public String getFieldName(int index) {
 		String names[] = {
 				"Stamme Lejr",
 				"Krater",
@@ -27,7 +27,7 @@ public class Dansk implements LanguageDefinitions {
 				"Slot",
 				"Kaperflåden"			
 		};
-		return names[id];
+		return names[index];
 	}
 	@Override
 	public String getFieldRent(int rent) {

@@ -9,10 +9,11 @@ private int bonus;
 		super(fieldNumber, color);
 		this.bonus = bonus;
 	}
-//  Når man lander på refuge modtager man en sum penge
+//  Når man lander på refuge modtager man en sum penge 
 	@Override
 	public int landOnField(Player player) {
 		player.Transaction(this.bonus);
+//	minus, minus giver plus
 		return -this.bonus;
 	}
 
