@@ -24,7 +24,7 @@ public class Tax extends Field{
 		player.Transaction(-payment);
 		return payment;
 	}
-// Overload
+// Overload metode
 	@Override
 	public int landOnField(Player player, int rate) {
 		int balance = player.getBalance();
