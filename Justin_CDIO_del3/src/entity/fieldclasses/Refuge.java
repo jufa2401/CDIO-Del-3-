@@ -5,11 +5,20 @@ import entity.Player;
 //TODO: Meddelelse om modtagelse af penge
 public class Refuge extends Field {
 private int bonus;
+
+	/** Constructor til Refuge felter.
+	 * @param fieldNumber
+	 * @param color
+	 * @param bonus
+	 */
 	public Refuge(int fieldNumber, Color color, int bonus) {
 		super(fieldNumber, color);
 		this.bonus = bonus;
 	}
-//  Når man lander på refuge modtager man en sum penge 
+	/* (non-Javadoc)
+	 * @see entity.fieldclasses.Field#landOnField(entity.Player)
+	 * Når man lander på refuge modtager man en sum penge 
+	 */
 	@Override
 	public int landOnField(Player player) {
 		player.Transaction(this.bonus);

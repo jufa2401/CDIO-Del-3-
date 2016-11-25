@@ -3,11 +3,22 @@ import java.awt.Color;
 
 import entity.Player;
 
+/**
+ * @author janus
+ *
+ */
+/**
+ * @author janus
+ *
+ */
 public abstract class Field {
 	private int ID;
 	private Color color;
-
-	// Constructor der skaber felter 
+	/**
+	 * Constructor som laver et felt.
+	 * @param fieldNumber
+	 * @param color
+	 */
 	public Field(int fieldNumber, Color color) {
 		this.ID = fieldNumber;
 		this.color = color;
@@ -18,10 +29,16 @@ public abstract class Field {
 	}
 
 
+	/**
+	 * @return
+	 */
 	public int getID() {
 		return ID;
 	}
 
+	/**
+	 * @return
+	 */
 	public Color getColor() {
 		return color;
 	}
@@ -38,11 +55,24 @@ public abstract class Field {
 	public abstract int getType();
 
 
+	/**
+	 * @param player
+	 * @return
+	 */
 	public abstract int landOnField(Player player);
+
+	/**
+	 * @param player
+	 * @param taxRate
+	 * @return
+	 */
 	public int landOnField(Player player, int taxRate) {
 		return 0;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getTaxAmount() {
 		return 0;
 	}

@@ -11,17 +11,32 @@ import entity.Player;
  */
 public class Territory extends Ownable{
 	int rent;
+	/** Constructor til Territory felter
+	 * @param fieldNumber
+	 * @param color
+	 * @param price
+	 * @param rent
+	 */
 	public Territory(int fieldNumber, Color color, int price, int rent) {
 		super(fieldNumber, color, price);
 		this.rent = rent;	
 	}
 
+	/* (non-Javadoc)
+	 * @see entity.fieldclasses.Field#getPrice()
+	 */
 	public int getPrice() {
 		return this.price;
 	}
+	/* (non-Javadoc)
+	 * @see entity.fieldclasses.Field#getRent()
+	 */
 	public int getRent() {
 		return rent;
 	}
+	/* (non-Javadoc)
+	 * @see entity.fieldclasses.Field#landOnField(entity.Player)
+	 */
 	@Override
 	/*	
 	 *  Når spilleren lander på feltet får han muligheden for køb, hvis ikke ejet. Hvis den er ejet betaler han leje.
@@ -32,7 +47,7 @@ public class Territory extends Ownable{
 	/**
 	 * Method landOnField checker om der er ejer på et felt,
 	 * hvis der er ejer på et felt, betales der til ejeren. 
-	 * @return
+	 * @return Belæøb betalt til felt ejer 
 	 */
 
 	public int landOnField(Player player) {

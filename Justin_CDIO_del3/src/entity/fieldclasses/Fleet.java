@@ -10,13 +10,26 @@ import entity.Player;
  * Lejen er bestemt efter hvor mange af denne type ejendom man ejer
  * dvs. at du kan opkræve højere leje, jo flere 'fleets' du ejer
  */
+/**
+ * @author janus
+ *
+ */
 public class Fleet extends Ownable {
 	int rent, fleetsOwned;
 
+	/**
+	 * Constructor til Fleet felt objekter/instanser. 
+	 * @param fieldNumber
+	 * @param color
+	 * @param price
+	 */
 	public Fleet(int fieldNumber, Color color, int price) {
 		super(fieldNumber, color, price);
 	}
 
+	/* (non-Javadoc)
+	 * @see entity.fieldclasses.Field#landOnField(entity.Player)
+	 */
 	@Override
 	public int landOnField(Player player)  {
 		int paid = 0;
@@ -37,6 +50,9 @@ public class Fleet extends Ownable {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see entity.fieldclasses.Ownable#buyField(entity.Player)
+	 */
 	@Override
 	public void buyField(Player player) {
 		super.buyField(player);
