@@ -62,7 +62,11 @@ public class GameBoard {
 	public Field getField(int i ) {
 		return field[i];
 	}
-// Metode til at finde et felts index ved at bruge felt id, det bliver aldrig brugt.
+/**
+ *  Metode til at finde et felts index ved at bruge felt id, det bliver aldrig brugt.
+ * @param f
+ * @return
+ */
 	public int getFieldNumber(Field f) {
 		int i;
 		for (i = 0; i< getNumberOfFields(); i++){
@@ -72,7 +76,12 @@ public class GameBoard {
 		return i;
 	}
 
-//	Metode til at fjerne ejerskab af ejendomme, når spiller dør
+/**
+ * 	Metode til at fjerne ejerskab af ejendomme, når spiller dør
+ * @param n
+ * @param player
+ * @return
+ */
 	public boolean removeFieldOwner(int n, Player player) {
 		boolean freed = false;
 		if (field[n].getPrice() > 0) {	// hvis feltet kan ejes

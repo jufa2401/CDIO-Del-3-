@@ -12,6 +12,11 @@ public class LanguageHandler {
 		setLanguage(language);
 	}
 
+	/**
+	 * Metode til at skifte sprog, skulle det blive nødvendigt ved viderudvikling
+	 * Engelsk er med som eksempel, men er kommenteret ud
+	 * @param language
+	 */
 	public void setLanguage(String language) {
 		switch(language) {
 		case "Dansk": selectedLanguage = new Dansk(); break;

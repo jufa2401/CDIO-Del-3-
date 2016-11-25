@@ -5,7 +5,12 @@ public class Player {
 	private int balance, currentField, d1, d2, fleetsOwned,LaborCampsOwned, Identifier;
 	private boolean hasLost;
 	private static int AvailableIdentifer = 0;
-	//Constructor:
+	/**
+	 * Den private int anvendes til at give hver spiller et unikt id
+	 * 
+	 * @param name
+	 * @param balance
+	 */
 	public Player (String name, int balance){
 		this.name = name;
 		this.balance = balance;
@@ -24,14 +29,17 @@ public class Player {
 	public void setName(String name) {
 		this.name = name;
 	}
-	//	 metode der tjekker om en spiller har tabt
+	/**
+	 * 	 metode der tjekker om en spiller har tabt
+	 * @return
+	 */
 	public boolean hasLost() {
 		if (balance <= 0) {
 			hasLost = true;
-			//TODO: afgiv ejendomme?
 		}
 		return hasLost;
 	}
+	// nedenstående metode bliver ikke brugt, og kan fjernes
 	public void setHasLost(boolean hasLost) {
 		this.hasLost = hasLost;
 	}
@@ -52,7 +60,7 @@ public class Player {
 		this.LaborCampsOwned = laborCampsOwned;
 	}
 
-	/*
+	/**
 	 *  Vi laver metode til at gemme terningsummen, denne metode er lavet specifikt 
 	 *  med hensyn til felter hvor aktionen er bestemt af terningsummen.
 	 */
@@ -64,23 +72,28 @@ public class Player {
 	public int getDiceSum() {
 		return d1 + d2;
 	}
+
 	/**
-	 * addToCurrentBalance adds amount to the total balance and returns the new balance, note that the balance cannot be negative. 
+	 * Metode til overførsel af penge
+	 * Hvis balancen ryger under nul bliver balancen sat til 0
 	 * @param amount
 	 * @return
 	 */
-	//	Metode til overførsel af penge
 	public int Transaction(int amount){
 		balance = balance + amount;
-		//	Hvis balancen ryger under nul bliver balancen sat til 0
 		if(balance < 0){
 			balance = 0;
 		}
 		return balance;
 	}	
 
-	//	Giver muligheden for at betale til andre spillere, afslutter med at returnere den ændrede balance
-	//  Hvis en spiller lander på sit eget felt, trækker man i princippet fra sin egen konto, men de bliver tilført igen med det samme.
+	/**
+	 * 	Giver muligheden for at betale til andre spillere, afslutter med at returnere den ændrede balance
+	 *  Hvis en spiller lander på sit eget felt, trækker man i princippet fra sin egen konto, men de bliver tilført igen med det samme.
+	 * @param recipient
+	 * @param amount
+	 * @return
+	 */
 	public int payTo (Player recipient, int amount) {
 		recipient.Transaction(amount);
 		Transaction(-amount);
@@ -91,7 +104,12 @@ public class Player {
 	public int getCurrentField() {
 		return currentField;
 	}
-	//	Når vi rykker os udover arraylængden roller vi, og trækker arraylængden fra.
+	/**
+	 * 	Når vi rykker os udover arraylængden ruller vi rundt ved at trække arraylængden fra.
+	 * @param roll
+	 * @param gb
+	 * @return
+	 */
 	public int moveToField(int roll, GameBoard gb) {
 		int length = gb.getNumberOfFields();
 		this.currentField += roll;

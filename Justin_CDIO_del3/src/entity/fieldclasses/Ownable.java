@@ -3,7 +3,7 @@ import java.awt.Color;
 
 import entity.Player;
 
-/*
+/**
  * Ownable er en underklasse til Fieldklassen,
  * som er superklasse til alle felter der kan ejes
  * Ownable indeholder således alle de metoder, den arver fra Field

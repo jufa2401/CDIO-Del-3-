@@ -22,8 +22,8 @@ public class Controller {
 	}
 
 	public void launchGame() {
-		//		if(boundary.getButtonPressed(language.startGame()));
 		int nPlayers = playerList.getNumberofPlayer();
+		// Spillerne rykker efter tur, indtil der findes en vinder
 		while(playerList.isWinner() == false) {
 			for(int i = 0; i < nPlayers; i++) {
 				Player player = playerList.getPlayer(i);
@@ -32,24 +32,36 @@ public class Controller {
 					gameTurn(player);
 			}
 		}
-		// Spillet er slut
+		// Spillet er slut, og der gives besked om hvem der har vundet
 		String winner = playerList.getWinner();
 		GUIh.getButtonPressed(language.GameOver(winner), language.Ok());
 	}
 
 	public void gameTurn(Player player) {
+		// vent indtil spilleren er klar til at rykke
 		GUIh.getButtonPressed(language.GetOkMove(player.getName()), language.Ok());
 		dice.rollDiceCup();
 		int[] d = dice.getDiceValue();
 		GUIh.showDice(d[0], d[1]);
+		// Fjerner brik fra feltet
 		GUIh.removeCar(player.getCurrentField(), player.getName());
+		// Husker terningekast, i tilfælde af at det skal bruges til at beregne leje
 		player.SaveDiceRoll(dice);
+		// spilleren rykker
 		int fieldNumber = player.moveToField(dice.getDiceSum(), game);
+		// spillerens brik vises på det nye felt
 		GUIh.setCar(fieldNumber, player.getName());
-		//		GUIHandler.getButtonPressed(language.fieldMsg(fieldNumber)); {
+		// vi henter feltet på basis af dets index
 		Field field = game.getField(fieldNumber);
+		// vi gemmer spillerens tabt-status
 		boolean hasLost = player.hasLost();
+		// Vi kalder GameLogic som indeholder feltreglerne
 		GameLogic.FieldRules(GUIh, language, fieldNumber, field, player);	
+		/*
+		 *  Vi bruger den tidligere gemte tabt-status, til at kontrollere om
+		 *  spilleren har tabt i den netop gennemførte træk. Hvis han har tabt,
+		 *  frigives alle ejendomme og spillerens brik fjernes fra feltet
+		 */
 		if (!hasLost && player.hasLost() == true) {
 			for (int n = 0; n <  game.getNumberOfFields(); n++) {
 				if (game.removeFieldOwner(n, player) == true)

@@ -3,14 +3,6 @@ import java.awt.Color;
 
 import entity.Player;
 
-/**
- * @author janus
- *
- */
-/**
- * @author janus
- *
- */
 public abstract class Field {
 	private int ID;
 	private Color color;
@@ -23,11 +15,6 @@ public abstract class Field {
 		this.ID = fieldNumber;
 		this.color = color;
 	}
-	public int[] getTax(int balance) {
-		int[] tax = {0,0}; 
-		return tax;
-	}
-
 
 	/**
 	 * @return
@@ -43,15 +30,19 @@ public abstract class Field {
 		return color;
 	}
 
-	/*
+	/**
 	 * Defineres til at hente rent og price fra Fieldklassen. 
 	 * Det bliver smart når vi skal lave referencer i vores GUI-array
 	 * Alle underklasserne har denne metode med, selvom de ikke bruger dem
 	 * De vil returnere med 0, hvis de ikke skal bruge dem.
-	 * Definerer type til at genkende felternes type fra hinanden.
 	 */
-	public abstract int getRent();
 	public abstract int getPrice();
+	public abstract int getRent();
+	
+	/**
+	 * Abstract metode, som nedarves til underklasser,
+	 * som hver især skal returnere en unik id
+	 */
 	public abstract int getType();
 
 
@@ -71,6 +62,11 @@ public abstract class Field {
 	}
 	
 	/**
+	 * Returnerer 0, så man kan skelne  de øvrige felter fra 
+	 * dét ene taxfelt der har en taxRate, dette bruges til 
+	 * at bestemme hvornår spilleren skal spørges om hvorvidt
+	 * de vil betale den eller den anden type skat
+	 * 
 	 * @return
 	 */
 	public int getTaxAmount() {

@@ -13,13 +13,14 @@ public class GameLogic{
 			//			hvis feltet kan ejes
 			Ownable ofield = (Ownable) field; 
 			if (ofield.getOwner() != null) {
-				// Der er en ejer af feltet
+				// Hvis der er en ejer af feltet
 				int paid = ofield.landOnField(player);
 
 				// Giv besked om betalt leje
 				GUIh.getButtonPressed(language.playerPayTo(player.getName(), ofield.getOwner().getName(), paid), language.Ok());
 				GUIh.setBalance(ofield.getOwner().getName(), ofield.getOwner().getBalance());
 			} else {
+				// Feltet ejes ikke af nogen, hvis spilleren har penge nok spørges der om feltet skal købes
 				if (player.getBalance() > ofield.getPrice()) {
 					if (GUIh.getYesNo(language.askBuyField(), language.yes(), language.no())) {
 						ofield.buyField(player);
@@ -53,6 +54,7 @@ public class GameLogic{
 				GUIh.getButtonPressed(language.playerBonus(player.getName(), -paid), language.Ok());
 			}
 		}
+		// GUI opdateres med den nye balance for spilleren
 		GUIh.setBalance(player.getName(), player.getBalance());
 
 	}

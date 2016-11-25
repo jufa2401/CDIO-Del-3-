@@ -15,29 +15,38 @@ private int bonus;
 		super(fieldNumber, color);
 		this.bonus = bonus;
 	}
-	/* (non-Javadoc)
-	 * @see entity.fieldclasses.Field#landOnField(entity.Player)
-	 * Når man lander på refuge modtager man en sum penge 
+
+	/**
+	 *  Hvis man lander på en Refuge
+	 *  får man udbetalt en bonus
 	 */
 	@Override
 	public int landOnField(Player player) {
 		player.Transaction(this.bonus);
-//	minus, minus giver plus
+//	betalte beløb er positivt, derfor er det udbetalte beløb negativt
 		return -this.bonus;
 	}
 
-
+	/**
+	 *  ikke relevant idet feltet ikke er ownable
+	 */
 	@Override
 	public int getRent() {
 		return bonus;
 	}
 
+	/**
+	 *  ikke relevant idet feltet ikke er ownable
+	 */
 	@Override
-	
 	public int getPrice() {
 		return 0;
 	}
 
+	/**
+	 * Returnerer unik id, 
+	 * som identificerer denne klasse som Refuge
+	 */
 	@Override
 	public int getType() {
 		return 3;	// Refuge

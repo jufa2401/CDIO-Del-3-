@@ -13,13 +13,16 @@ public class Main {
 	public static void main (String[]args) {
 		GameBoard game = new GameBoard();
 		GUIHandler GUIh = new GUIHandler();
-//		Sætter sproget til dansk, flere sprog kan udvikles i language pakken, ved at implemente
+//		Sætter sproget til dansk, flere sprog kan udvikles i language pakken, ved at implementere language definitions
 		LanguageHandler language = new LanguageHandler("Dansk");
-		//		PlayerList playerList = new PlayerList();
+		// Opretter spilleplade i GUI på basis af feltrækken i GameBoard
 		GUIh.createGameBoard(game, language);
+		// Vis spillets regler til spillerne
 		GUIh.getGameRules(language.gameRules());
-		int playerCount = GUIh.getInteger(language.AskHowManyPlayers(), 2, 6);
+		// Spørger om antal spillere
+		int playerCount = GUIh.getInteger(language.AskHowManyPlayers(), 2, 6);		
 		PlayerList playerList = new PlayerList(playerCount);
+		// beder om spillernavne, og kontrollerer de ikke er i brug
 		for (int i = 0; i < playerCount; i++)
 		{
 			String name;
@@ -29,6 +32,7 @@ public class Main {
 			playerList.addPlayer(i, name);
 			GUIh.addPlayer(playerList.getPlayer(i).getName(), playerList.getPlayer(i).getBalance());
 		}
+		//Start spillet
 		Controller GameController = new Controller(GUIh, language, game, playerList);
 		GameController.launchGame();
 	}

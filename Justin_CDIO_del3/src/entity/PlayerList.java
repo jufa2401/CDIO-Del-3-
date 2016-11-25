@@ -5,7 +5,10 @@ public class PlayerList {
 	private int playerCount;
 	private Player[] players;
 
-// For hver spiller der kommer ind i spillet, tæller vi 1 op i players arrayet
+/**
+ *  For hver spiller der kommer ind i spillet, tæller vi 1 op i players arrayet
+ * @param playerCount
+ */
 	public PlayerList (int playerCount) {
 		this.players = new Player[playerCount];
 		for (int c = 0; c < playerCount; c++)
@@ -13,20 +16,23 @@ public class PlayerList {
 		this.playerCount = playerCount;
 	}
 
-// Vi tildeler spillerne ID, og tilføjer spillerne med  parametrene navn og balance
+/**
+ * Vi tildeler spillerne ID, og tilføjer spillerne med  parametrene navn og balance
+ * @param ID
+ * @param name
+ */
 	public void addPlayer(int ID, String name) {
 		players[ID] = new Player(name, 30000);
 	}
 	
 	public Player getPlayer(int ID) {
-		
 		return players[ID];
 	}
 	public int getNumberofPlayer() {
 		return playerCount;
 	}
 
-/*
+/**
  *  Kunne ikke få GUI'en til at vise spillere med samme navn,
  *  og laver derfor kode som stopper brugeren for at gøre dette
 */
@@ -40,7 +46,10 @@ public class PlayerList {
 		return isUsed;
 	}
 
-// Checker for vinder, ved at tælle tabere
+/**
+ *  Checker for vinder, ved at tælle tabere
+ * @return
+ */
 	public boolean isWinner() {
 		int n = 0;
 		for (int c = 0; c < playerCount; c++) {
@@ -51,7 +60,10 @@ public class PlayerList {
 		return (n == 1);
 	}
 	
-	// Forudsætter at vi ved der er en vinder
+	/**
+	 *  Forudsætter at vi ved der er en vinder
+	 * @return navnet på vinderen, for at det kan vises i GUI
+	 */
 	public String getWinner() {
 		String name = "";
 		for (int c = 0; c < playerCount; c++) {

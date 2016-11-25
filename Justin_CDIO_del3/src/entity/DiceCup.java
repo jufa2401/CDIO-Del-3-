@@ -8,7 +8,7 @@ public class DiceCup {
 	protected static Die d2 = new Die();
 
 	/**
-	 * Method rollDiceCupolls the two dice objects. 
+	 * Method slår med 2 terninger
 	 * @return
 	 */
 	public void rollDiceCup() {
@@ -22,7 +22,7 @@ public class DiceCup {
 	}	
 
 	/**
-	 * Method getDiceSum returns the sum of the two dice objects. 
+	 * Method getDiceSum returnerer summen af terningerne
 	 * @return
 	 */
 	public int getDiceSum()	{
