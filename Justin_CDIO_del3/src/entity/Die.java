@@ -12,5 +12,3 @@ public class Die {
 		return FaceValue;   
 	}		
 }
-
-

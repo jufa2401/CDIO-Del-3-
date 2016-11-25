@@ -16,7 +16,6 @@ public class PlayerList {
 // Vi tildeler spillerne ID, og tilføjer spillerne med  parametrene navn og balance
 	public void addPlayer(int ID, String name) {
 		players[ID] = new Player(name, 30000);
-
 	}
 	
 	public Player getPlayer(int ID) {

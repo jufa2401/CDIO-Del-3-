@@ -3,6 +3,14 @@ package boundary.language;
 public class Dansk implements LanguageDefinitions {
 
 	@Override
+	public String gameRules() {
+		return "\t Dette spil kan spilles af 2-6 spillere. \n"
+				+ "\t Spillet tabes ved at gå bankerot, den sidste spiller med likvide midler vinder spillet. \n"
+				+ "\t Alle spillere starter med en balance på 30.000. \n"
+				+ "\t Visse felter kan købes, andre kan medføre en betaling. \n"
+				+ "\t Hvis en spiller lander på et ejet felt, betales en sum til ejeren. \n " ;
+	}
+	@Override
 	public String getFieldName(int index) {
 		String names[] = {
 				"Stamme Lejr",
@@ -52,10 +60,7 @@ public class Dansk implements LanguageDefinitions {
 		}
 		return s;
 	}
-	@Override
-	public String notifyLangChange(){
-		return "Sproget er sat til Dansk";
-	}
+
 	@Override
 	public String AskHowManyPlayer() {
 		return "Hvor mange spillere? (mellem 2 og 6) ";
@@ -106,14 +111,7 @@ public class Dansk implements LanguageDefinitions {
 	public String playerPayTo(String payer, String recipient, int paid) {
 		return "Spiller '" + payer + "' betaler "+ paid + " til '" + recipient + "'.";
 	}
-	@Override
-	public String gameRules() {
-		return "\t Dette spil kan spilles af 2-6 spillere. \n"
-				+ "\t Spillet tabes ved at gå bankerot, den sidste spiller med likvide midler vinder spillet. \n"
-				+ "\t Alle spillere starter med en balance på 30.000. \n"
-				+ "\t Visse felter kan købes, andre kan medføre en betaling. \n"
-				+ "\t Hvis en spiller lander på et ejet felt, betales en sum til ejeren. \n " ;
-	}
+
 	@Override
 	public String playerTax(String name, int paid) {
 		return "Spiller '" + name + "' betaler "+ paid + " i skat.";

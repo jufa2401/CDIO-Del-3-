@@ -2,6 +2,8 @@
 
 	public interface LanguageDefinitions {
 	
+	public String gameRules();
+	
 	public String getFieldName(int index);
 	
 	public String getFieldRent(int rent);
@@ -9,9 +11,7 @@
 	public String getFieldPrice(int price);
 
 	public String getFieldDescription(int type);
-
-	public String notifyLangChange();
-
+	
 	public String AskHowManyPlayer();
 
 	public String AskForPlayerName();
@@ -30,7 +30,7 @@
 
 	public String playerPayTo(String payer, String recipient, int paid);
 	
-	public String gameRules();
+	
 
 	public String playerTax(String name, int paid);
 

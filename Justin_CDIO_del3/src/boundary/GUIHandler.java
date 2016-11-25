@@ -7,7 +7,7 @@ import desktop_codebehind.Car.Builder;
 import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
-/*
+/*		
  * Det er forsøgt at begrænse koblingen mellem boundary og entities,
  * men har endt med at beholde GameBoard, da  det for mig resulterede i 
  * meget simplere kode. 

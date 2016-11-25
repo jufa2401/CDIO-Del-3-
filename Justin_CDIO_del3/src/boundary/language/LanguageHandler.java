@@ -19,13 +19,9 @@ public class LanguageHandler {
 		default: selectedLanguage = new Dansk();
 		}
 	}
-
-	/**
-	 * Notifies of language change
-	 * @return String
-	 */
-	public String notifyLangChange(){
-		return selectedLanguage.notifyLangChange();
+	
+	public String gameRules(){
+		return selectedLanguage.gameRules();
 	}
 
 	public String getFieldName(int index) {
@@ -82,11 +78,6 @@ public class LanguageHandler {
 		return selectedLanguage.playerPayTo(payer, recipient, paid);
 	}
 	
-	public String gameRules(){
-		return selectedLanguage.gameRules();
-	}
-
-
 	public String playerTax(String name, int paid) {
 		return selectedLanguage.playerTax(name, paid);
 	}

@@ -24,7 +24,7 @@ public class Tax extends Field{
 		player.Transaction(-payment);
 		return payment;
 	}
-// Overload metode
+// Overload metode var den eneste måde jeg kunne finde på at lave det her, uden at bryde GRASP principper.
 	@Override
 	public int landOnField(Player player, int rate) {
 		int balance = player.getBalance();
