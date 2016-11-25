@@ -57,11 +57,27 @@ public class TestTax {
 		int actual = this.player.getBalance();
 		Assert.assertEquals(expected, actual);
 		
-		//Tester LandOnField i forhold til tax når der vælges at betale 10% i stedet for 4000.
+		//Tester LandOnField hvor der vælges at betale 4000.
 		taxfield.landOnField(this.player);
+		
+		expected = 10000 - 4000;
+		actual = this.player.getBalance();
+		Assert.assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public final void testLandOnFieldOverload() {
+		int expected = 10000;
+		int actual = this.player.getBalance();
+		Assert.assertEquals(expected, actual);
+		
+		//Tester LandOnField (Overload metoden) i forhold til tax når der vælges at betale 10% i stedet for 4000.
+		taxfield.landOnField(this.player, this.taxfield.getTaxRate());
 		
 		expected = 10000 - (10000*10/100);
 		actual = player.getBalance();
 		Assert.assertEquals(expected, actual);
+		
 	}
 }
